@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Planet, Moon } = require("../models");
+const { Planet, Moon } = require("../db");
 
 router.get("/", async (req, res, next) => {
   try {
