@@ -1,6 +1,5 @@
 "use strict";
 
-const { matchRoutes } = require("react-router-dom");
 const {
   db,
   models: { User, Planet, Moon },
@@ -272,6 +271,12 @@ const planets = [
 async function seed() {
   await db.sync({ force: true }); // clears db and matches models to tables
   console.log("db synced!");
+
+  const planet = await Promise.all(
+    planets.map((planet) => {
+      return Planet.create(planet);
+    })
+  );
 
   // Creating Users
   const users = await Promise.all([
