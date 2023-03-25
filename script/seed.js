@@ -6,7 +6,7 @@ const planets = [
   {
     name: "Mercury",
     radiusInMiles: 1516,
-    distanceInMiles: 29.6,
+    distanceInMiles: 29586251,
     factOne: "It is the closest planet to the sun.",
     factTwo: "It is the smallest of the non dwarf planets in our solar system.",
     factThree:
@@ -102,164 +102,226 @@ const planets = [
   },
 ];
 
-// const moons = [
-//  {
-//     name: "Luna",
-//     history: "It is named Luna in Latin which is the main adjective for all things moon-related.",
-//     radiusInMiles: 1079.6,
-//     planetId: "earth.id"
-//   },
-//   {
-//     name: "Deimos",
-//     history: "It is named after the two horses that pull the Roman god of war, Mars’, chariot.",
-//     radiusInMiles: 3.8525,
-//     planetId: "mars.id"
-//   },
-//   {
-//     name: "Phobos",
-//     history: "It is named after the two horses that pull the Roman god of war, Mars’, chariot.",
-//     radiusInMiles: 7.0008,
-//     planetId: "mars.id"
-//   },
-//  {
-//      name: "Io",
-//     history: "It was named after the mythological character Io, a priestess of Hera who became one of Zeus's lovers.",
-//     radiusInMiles: 1131.9,
-//     planetId: "jupiter.id"
-//   },
-//      {
-//      name: "Europa",
-//     history: "Europa is named for a woman who, in Greek mythology, was abducted by the god Zeus – Jupiter in Roman mythology.",
-//     radiusInMiles: 969.84,
-//     planetId: "jupiter.id"
-//   },
-//      {
-//      name: "Ganymede",
-//     history: "Ganymede was named after a beautiful young boy who was carried to Olympus by Zeus (the Greek equivalent of the Roman god Jupiter) disguised as an eagle and became the cupbearer of the Olympian gods.",
-//     radiusInMiles: 1636.8,
-//     planetId: "jupiter.id"
-//   },
-//      {
-//      name: "Callisto",
-//     history: "Callisto is named for a woman turned into a bear by Zeus in Greek mythology.",
-//     radiusInMiles: 1497.7,
-//     planetId: "jupiter.id"
-//   },
-//  {
-//      name: "Naiad",
-//     history: "The Naiads, female spirits (nymphs) associated with bodies of freshwater.",
-//     radiusInMiles: 20.505,
-//     planetId: "neptune.id"
-//   },
-//  {
-//      name: "Thalassa",
-//     history: "The sea goddess Thalassa.",
-//     radiusInMiles: 25.476,
-//     planetId: "neptune.id"
-//   },
-//  {
-//      name: "Despina",
-//     history: "The nymph Despoina.",
-//     radiusInMiles: 46.603,
-//     planetId: "neptune.id"
-//   },
-//  {
-//      name: "Galtea",
-//     history: "Galatea, one of the Nereids.",
-//     radiusInMiles: 54.308,
-//     planetId: "neptune.id"
-//   },
-//  {
-//      name: "Larissa",
-//     history: "Larissa, nymph and lover of Poseidon.",
-//     radiusInMiles: 60.273,
-//     planetId: "neptune.id"
-//   },
-//  {
-//      name: "Hippocamp",
-//     history: "Hippocampus, a mythical creature associated with Poseidon.",
-//     radiusInMiles: 5.5923,
-//     planetId: "neptune.id"
-//   },
-//  {
-//      name: "Proteus",
-//     history: "The shapeshifting sea god Proteus",
-//     radiusInMiles: 130.49,
-//     planetId: "neptune.id"
-//   },
-//  {
-//      name: "Triton",
-//     history: "The sea god Triton.",
-//     radiusInMiles: 840.96,
-//     planetId: "neptune.id"
-//   },
-//  {
-//      name: "Nereid",
-//     history: "The Nereids, a group of sea nymphs.",
-//     radiusInMiles: 105.63,
-//     planetId: "neptune.id"
-//   },
-//  {
-//      name: "Halimede",
-//     history: "Halimede, one of the Nereids.",
-//     radiusInMiles: 19.263,
-//     planetId: "neptune.id"
-//   },
-//  {
-//      name: "Sao",
-//     history: "Sao, one of the Nereids.",
-//     radiusInMiles: 13.67,
-//     planetId: "neptune.id"
-//   },
-//  {
-//      name: "Laomedeia",
-//     history: "Laomedeia, one of the Nereids.",
-//     radiusInMiles: 13.049,
-//     planetId: "neptune.id"
-//   },
-//  {
-//      name: "Psamathe",
-//     history: "Psamathe, one of the Nereids.",
-//     radiusInMiles: 11.806,
-//     planetId: "neptune.id"
-//   },
-//  {
-//      name: "Neso",
-//     history: "Neso, one of the Nereids.",
-//     radiusInMiles: 18.641,
-//     planetId: "neptune.id"
-//   },
-//  {
-//      name: "Charon",
-//     history: "Charon, ferryman of the underworld in Greek mythology.",
-//     radiusInMiles: 376.55,
-//     planetId: "pluto.id"
-//   },
-//  {
-//      name: "Nix",
-//     history: "Egyptian spelling of Nyx, goddess of the night in Greek mythology.",
-//     radiusInMiles: 35,
-//     planetId: "pluto.id"
-//   },
-//  {
-//      name: "Styx",
-//     history: "The mythical river Styx and its eponymous goddess.",
-//     radiusInMiles: 8,
-//     planetId: "pluto.id"
-//   },
-//  {
-//      name: "Kerberos",
-//     history: "Greek spelling of Cerberus, the many-headed dog who guards the Greek underworld.",
-//     radiusInMiles: 5.6,
-//     planetId: "pluto.id"
-//   },
-//  {
-//      name: "Hydra",
-//     history: "The Hydra, the many-headed serpent who guards the Greek underworld.",
-//     radiusInMiles: 35,
-//     planetId: "pluto.id"
-//   },
-// ]
+const moons = [
+  {
+    name: "Luna",
+    history:
+      "It is named Luna in Latin which is the main adjective for all things moon-related.",
+    radiusInMiles: 1079.6,
+    planetId: 3,
+  },
+  {
+    name: "Deimos",
+    history:
+      "It is named after the two horses that pull the Roman god of war, Mars’, chariot.",
+    radiusInMiles: 3.8525,
+    planetId: 4,
+  },
+  {
+    name: "Phobos",
+    history:
+      "It is named after the two horses that pull the Roman god of war, Mars’, chariot.",
+    radiusInMiles: 7.0008,
+    planetId: 4,
+  },
+  {
+    name: "Io",
+    history:
+      "It was named after the mythological character Io, a priestess of Hera who became one of Zeus's lovers.",
+    radiusInMiles: 1131.9,
+    planetId: 5,
+  },
+  {
+    name: "Europa",
+    history:
+      "Europa is named for a woman who, in Greek mythology, was abducted by the god Zeus – Jupiter in Roman mythology.",
+    radiusInMiles: 969.84,
+    planetId: 5,
+  },
+  {
+    name: "Ganymede",
+    history:
+      "Ganymede was named after a beautiful young boy who was carried to Olympus by Zeus (the Greek equivalent of the Roman god Jupiter) disguised as an eagle and became the cupbearer of the Olympian gods.",
+    radiusInMiles: 1636.8,
+    planetId: 5,
+  },
+  {
+    name: "Callisto",
+    history:
+      "Callisto is named for a woman turned into a bear by Zeus in Greek mythology.",
+    radiusInMiles: 1497.7,
+    planetId: 5,
+  },
+  {
+    name: "Naiad",
+    history:
+      "The Naiads, female spirits (nymphs) associated with bodies of freshwater.",
+    radiusInMiles: 20.505,
+    planetId: 8,
+  },
+  {
+    name: "Thalassa",
+    history: "The sea goddess Thalassa.",
+    radiusInMiles: 25.476,
+    planetId: 8,
+  },
+  {
+    name: "Despina",
+    history: "The nymph Despoina.",
+    radiusInMiles: 46.603,
+    planetId: 8,
+  },
+  {
+    name: "Galtea",
+    history: "Galatea, one of the Nereids.",
+    radiusInMiles: 54.308,
+    planetId: 8,
+  },
+  {
+    name: "Larissa",
+    history: "Larissa, nymph and lover of Poseidon.",
+    radiusInMiles: 60.273,
+    planetId: 8,
+  },
+  {
+    name: "Hippocamp",
+    history: "Hippocampus, a mythical creature associated with Poseidon.",
+    radiusInMiles: 5.5923,
+    planetId: 8,
+  },
+  {
+    name: "Proteus",
+    history: "The shapeshifting sea god Proteus",
+    radiusInMiles: 130.49,
+    planetId: 8,
+  },
+  {
+    name: "Triton",
+    history: "The sea god Triton.",
+    radiusInMiles: 840.96,
+    planetId: 8,
+  },
+  {
+    name: "Nereid",
+    history: "The Nereids, a group of sea nymphs.",
+    radiusInMiles: 105.63,
+    planetId: 8,
+  },
+  {
+    name: "Halimede",
+    history: "Halimede, one of the Nereids.",
+    radiusInMiles: 19.263,
+    planetId: 8,
+  },
+  {
+    name: "Sao",
+    history: "Sao, one of the Nereids.",
+    radiusInMiles: 13.67,
+    planetId: 8,
+  },
+  {
+    name: "Laomedeia",
+    history: "Laomedeia, one of the Nereids.",
+    radiusInMiles: 13.049,
+    planetId: 8,
+  },
+  {
+    name: "Psamathe",
+    history: "Psamathe, one of the Nereids.",
+    radiusInMiles: 11.806,
+    planetId: 8,
+  },
+  {
+    name: "Neso",
+    history: "Neso, one of the Nereids.",
+    radiusInMiles: 18.641,
+    planetId: 8,
+  },
+  {
+    name: "Charon",
+    history: "Charon, ferryman of the underworld in Greek mythology.",
+    radiusInMiles: 376.55,
+    planetId: 9,
+  },
+  {
+    name: "Nix",
+    history:
+      "Egyptian spelling of Nyx, goddess of the night in Greek mythology.",
+    radiusInMiles: 35,
+    planetId: 9,
+  },
+  {
+    name: "Styx",
+    history: "The mythical river Styx and its eponymous goddess.",
+    radiusInMiles: 8,
+    planetId: 9,
+  },
+  {
+    name: "Kerberos",
+    history:
+      "Greek spelling of Cerberus, the many-headed dog who guards the Greek underworld.",
+    radiusInMiles: 5.6,
+    planetId: 9,
+  },
+  {
+    name: "Hydra",
+    history:
+      "The Hydra, the many-headed serpent who guards the Greek underworld.",
+    radiusInMiles: 35,
+    planetId: 9,
+  },
+  {
+    name: "Enceladus",
+    history: "A giant in Greek mythology, son of Gaia and Uranus.",
+    radiusInMiles: 156,
+    planetId: 6,
+  },
+  {
+    name: "Titan",
+    history: "Titans were the old gods in Greek mythology.",
+    radiusInMiles: 1600,
+    planetId: 6,
+  },
+  {
+    name: "Dione",
+    history: "A Greek goddess, potentially the mother of Aphrodite.",
+    radiusInMiles: 349,
+    planetId: 6,
+  },
+  {
+    name: "Prometheus",
+    history:
+      "A Greek titan, known for stealing fire and giving it to humanity.",
+    radiusInMiles: 26,
+    planetId: 6,
+  },
+  {
+    name: "Oberon",
+    history:
+      "The king of fairies in Shakespeare's \"A Midsummer Night's Dream\".",
+    radiusInMiles: 473,
+    planetId: 7,
+  },
+  {
+    name: "Titania",
+    history:
+      "The queen of fairies in Shakespeare's \"A Midsummer Night's Dream\".",
+    radiusInMiles: 489,
+    planetId: 7,
+  },
+  {
+    name: "Ariel",
+    history: 'A spirit in Shakespeare\'s "The Tempest".',
+    radiusInMiles: 489,
+    planetId: 7,
+  },
+  {
+    name: "Puck",
+    history: "A sprite in Shakespeare's \"A Midsummer Night's Dream\".",
+    radiusInMiles: 489,
+    planetId: 7,
+  },
+];
 
 /**
  * seed - this function clears the database, updates tables to
@@ -275,6 +337,11 @@ async function seed() {
     })
   );
 
+  const moon = await Promise.all(
+    moons.map((moon) => {
+      return Moon.create(moon);
+    })
+  );
   // Creating Users
 }
 /*
