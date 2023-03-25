@@ -1,29 +1,121 @@
-'use strict'
+"use strict";
 
-const {db, models: {User} } = require('../server/db')
+const {
+  db,
+  models: { User, Planet, Moon },
+} = require("../server/db");
+
+const planets = [
+  {
+    name: "Mercury",
+    radiusInMiles: 1516,
+    distanceInMiles: 29.6,
+    factOne: "It is the closest planet to the sun.",
+    factTwo: "It is the smallest of the non dwarf planets in our solar system.",
+    factThree:
+      "Due to solar radiation and extreme temperatures, it is very unlikely that life could survive on the planet.",
+    core: "Solid",
+  },
+  // {
+  //   name: "Venus",
+  //   radiusInMiles: 0,
+  //   distanceInMiles: 0,
+  //   factOne: "",
+  //   factTwo: "",
+  //   factThree: "",
+  //   core: "",
+  // },
+  // {
+  //   name: "Earth",
+  //   radiusInMiles: 0,
+  //   distanceInMiles: 0,
+  //   factOne: "",
+  //   factTwo: "",
+  //   factThree: "",
+  //   core: "",
+  // },
+  // {
+  //   name: "Mars",
+  //   radiusInMiles: 0,
+  //   distanceInMiles: 0,
+  //   factOne: "",
+  //   factTwo: "",
+  //   factThree: "",
+  //   core: "",
+  // },
+  // {
+  //   name: "Jupiter",
+  //   radiusInMiles: 0,
+  //   distanceInMiles: 0,
+  //   factOne: "",
+  //   factTwo: "",
+  //   factThree: "",
+  //   core: "",
+  // },
+  // {
+  //   name: "Saturn",
+  //   radiusInMiles: 0,
+  //   distanceInMiles: 0,
+  //   factOne: "",
+  //   factTwo: "",
+  //   factThree: "",
+  //   core: "",
+  // },
+  // {
+  //   name: "Uranus",
+  //   radiusInMiles: 0,
+  //   distanceInMiles: 0,
+  //   factOne: "",
+  //   factTwo: "",
+  //   factThree: "",
+  //   core: "",
+  // },
+  // {
+  //   name: "Neptune",
+  //   radiusInMiles: 0,
+  //   distanceInMiles: 0,
+  //   factOne: "",
+  //   factTwo: "",
+  //   factThree: "",
+  //   core: "",
+  // },
+  // {
+  //   name: "Pluto",
+  //   radiusInMiles: 0,
+  //   distanceInMiles: 0,
+  //   factOne: "",
+  //   factTwo: "",
+  //   factThree: "",
+  //   core: "",
+  // },
+];
 
 /**
  * seed - this function clears the database, updates tables to
  *      match the models, and populates the database.
  */
 async function seed() {
-  await db.sync({ force: true }) // clears db and matches models to tables
-  console.log('db synced!')
-
+  await db.sync({ force: true }); // clears db and matches models to tables
+  console.log("db synced!");
+  const planet = await Promise.all(
+    planets.map((planet) => {
+      return Planet.create(planet);
+    })
+  );
   // Creating Users
   const users = await Promise.all([
-    User.create({ username: 'cody', password: '123' }),
-    User.create({ username: 'murphy', password: '123' }),
-  ])
+    User.create({ username: "cody", password: "123" }),
+    User.create({ username: "murphy", password: "123" }),
+  ]);
 
-  console.log(`seeded ${users.length} users`)
-  console.log(`seeded successfully`)
+  console.log(`seeded ${users.length} users`);
+  console.log(`seeded successfully`);
   return {
     users: {
       cody: users[0],
-      murphy: users[1]
-    }
-  }
+      murphy: users[1],
+    },
+  };
 }
 
 /*
@@ -32,16 +124,16 @@ async function seed() {
  The `seed` function is concerned only with modifying the database.
 */
 async function runSeed() {
-  console.log('seeding...')
+  console.log("seeding...");
   try {
-    await seed()
+    await seed();
   } catch (err) {
-    console.error(err)
-    process.exitCode = 1
+    console.error(err);
+    process.exitCode = 1;
   } finally {
-    console.log('closing db connection')
-    await db.close()
-    console.log('db connection closed')
+    console.log("closing db connection");
+    await db.close();
+    console.log("db connection closed");
   }
 }
 
@@ -51,8 +143,8 @@ async function runSeed() {
   any errors that might occur inside of `seed`.
 */
 if (module === require.main) {
-  runSeed()
+  runSeed();
 }
 
 // we export the seed function for testing purposes (see `./seed.spec.js`)
-module.exports = seed
+module.exports = seed;
