@@ -8,13 +8,17 @@ const Planet = db.define("planet", {
     allowNull: false,
   },
   radiusInMiles: {
-    type: Sequelize.INTEGER,
+    type: Sequelize.DECIMAL,
     allowNull: false,
   },
   distanceInMiles: {
     type: Sequelize.DECIMAL,
     allowNull: false,
   },
+  // mass: {
+  //   type: Sequelize.DECIMAL,
+  //   allowNull: false,
+  // },
   factOne: {
     type: Sequelize.TEXT,
     allowNull: false,

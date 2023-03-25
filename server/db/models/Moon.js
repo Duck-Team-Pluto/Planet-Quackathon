@@ -10,7 +10,7 @@ const Moon = db.define("moon", {
     type: Sequelize.TEXT,
   },
   radiusInMiles: {
-    type: Sequelize.INTEGER,
+    type: Sequelize.DECIMAL,
   },
 });
 
