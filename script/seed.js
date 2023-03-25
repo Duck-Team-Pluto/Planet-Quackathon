@@ -1,9 +1,6 @@
 "use strict";
 
-const {
-  db,
-  models: { User, Planet, Moon },
-} = require("../server/db");
+const { db, Planet, Moon } = require("../server/db");
 
 const planets = [
   {
@@ -68,7 +65,7 @@ const planets = [
     factTwo:
       "Its beautiful rings are not solid. They are made up of bits of ice, dust and rock.",
     factThree: "This planet is named after the Roman god of farming",
-    core: "Solid",
+    core: "Gas",
   },
   {
     name: "Uranus",
@@ -279,19 +276,6 @@ async function seed() {
   );
 
   // Creating Users
-  const users = await Promise.all([
-    User.create({ username: "cody", password: "123" }),
-    User.create({ username: "murphy", password: "123" }),
-  ]);
-
-  console.log(`seeded ${users.length} users`);
-  console.log(`seeded successfully`);
-  return {
-    users: {
-      cody: users[0],
-      murphy: users[1],
-    },
-  };
 }
 /*
  We've separated the `seed` function from the `runSeed` function.

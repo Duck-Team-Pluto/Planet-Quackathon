@@ -9,9 +9,7 @@ const Navbar = () => {
       <nav>
         <div>
           <Link to="/home">Home</Link>
-          <button type="button" onClick={logoutAndRedirectHome}>
-            Logout
-          </button>
+          <button type="button">Logout</button>
         </div>
       </nav>
     </div>
