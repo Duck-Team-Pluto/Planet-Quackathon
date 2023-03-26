@@ -15,10 +15,21 @@ const Planet = db.define("planet", {
     type: Sequelize.DECIMAL,
     allowNull: false,
   },
-  // mass: {
-  //   type: Sequelize.DECIMAL,
-  //   allowNull: false,
-  // },
+  mass: {
+    //kg
+    type: Sequelize.DECIMAL,
+    // allowNull: false,
+  },
+  orbitCirc: {
+    //miles
+    type: Sequelize.DECIMAL,
+    //allowNull: false,
+  },
+  orbitEcc: {
+    //miles
+    type: Sequelize.DECIMAL,
+    // allowNull: false,
+  },
   factOne: {
     type: Sequelize.TEXT,
     allowNull: false,
