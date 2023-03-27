@@ -15,14 +15,12 @@ const starMaker = (quantity, focus, starsize) => {
   })
 }
 
-const starMap1 = starMaker(350, 1.5, .25)
-const starMap2 = starMaker(200, 1.25, .5)
-const starMap3 = starMaker(40, 1.75, 1.25)
 const twinkles = starMaker(100, 1, .5)
 
 export const rotateAnimation = keyframes`
-from { transform: rotate(0deg);}
-to { transform: rotate(359deg);}
+0% { transform: rotate(0deg);}
+50% { transform: rotate(180deg);}
+100% { transform: rotate(359deg)}
 `
 
 export const StarBackground = styled.div`

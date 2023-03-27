@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { selectPlanet, fetchPlanetAsync } from "./singlePlanetSlice";
-import { PlanetImage } from "../../styled-components/planetdisplay";
+import { SinglePlanetImage } from "../../styled-components/planetdisplays";
 
 const Planet = () => {
   const dispatch = useDispatch();
@@ -16,7 +16,9 @@ const Planet = () => {
   }, [dispatch]);
   return (
     <div key={planet.id}>
-      <PlanetImage radius={planet.radiusInMiles}></PlanetImage>
+      <SinglePlanetImage radius={planet.radiusInMiles}>
+        {planet.moons && planet.moons.length ?
+        planet.moons.map((moon)=><p>{moon.name}</p>) : null} </SinglePlanetImage>
       <h1>{planet.name}</h1>
       <h2>Radius: {planet.radiusInMiles}</h2>
       <h2>Distance from the Sun: {planet.distanceInMiles}</h2>
