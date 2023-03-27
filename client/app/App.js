@@ -8,7 +8,6 @@ const App = () => {
     <div id="main">
       <Navbar />
       <AppRoutes />
-      {/* <Planet /> */}
       <StarBackground></StarBackground>
     </div>
   );
