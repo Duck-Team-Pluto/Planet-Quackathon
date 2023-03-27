@@ -1,3 +1,4 @@
+
 import React from 'react';
 import StarBackground from '../styled-components/starbackground';
 import Navbar from '../features/navbar/Navbar';
@@ -8,6 +9,7 @@ const App = () => {
     <div id="main">
       <Navbar />
       <AppRoutes />
+      <Planet />
       <StarBackground></StarBackground>
     </div>
   );

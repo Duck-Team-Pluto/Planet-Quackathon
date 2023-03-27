@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import logger from "redux-logger";
+import planetReducer from "../features/singlePlanet/singlePlanetSlice";
 
 const store = configureStore({
-  reducer: {},
+  reducer: {
+    planet: planetReducer,
+  },
   // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
 
