@@ -49,9 +49,9 @@ export const TwinkleStars = styled(StarBackground)`
 box-shadow: ${twinkles.join(',')};
 animation-name: ${twinkleAnimation};
 animation-duration: 480s;
-animation-iteration-count: infinite;
 animation-timing-function: linear;
 animation-delay: 0s;
+animation-iteration-count: infinite;
 z-index: -4;
 `
 
