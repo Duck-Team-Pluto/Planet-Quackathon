@@ -22,7 +22,7 @@ const Planet = () => {
       <h3>Fun Facts!!!</h3>
       <h3>{planet.factOne}</h3>
       <h3>{planet.factTwo}</h3>
-      <h3>{planet.factTwo}</h3>
+      <h3>{planet.factThree}</h3>
       <div>
         {planet.moons && planet.moons.length
           ? planet.moons.map((moon) => {
