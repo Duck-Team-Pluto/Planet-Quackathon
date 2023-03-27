@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 
+// <----    STARS ARE BORN    ---->
+// quantity is how many stars (more creates a denser starfield)
+// focus should be any number between .25 and 2,
+// starsize is the size of the stars in pixels so also between .25 and 2 is best
 
 const starMaker = (quantity, focus, starsize) => {
   const starArr = [...Array(quantity)]
@@ -12,8 +16,8 @@ const starMaker = (quantity, focus, starsize) => {
 }
 
 const starMap1 = starMaker(350, 1.5, .25)
-const starMap2 = starMaker(100, 1.25, .5)
-const starMap3 = starMaker(25, 2, 1)
+const starMap2 = starMaker(200, 1.25, .5)
+const starMap3 = starMaker(40, 1.75, 1.25)
 
 
 const StarBackground = styled.div`
