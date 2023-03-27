@@ -33,6 +33,8 @@ export const StarBackground = styled.div`
   box-shadow: ${props => starMaker(props.density, props.blur, props.size).join(',') || starMaker(350, 1.5, .25)};
   animation-name: ${rotateAnimation};
   animation-duration: ${props => props.time || '600s'};
+  animation-timing-function: linear;
+  animation-delay: 0s;
   animation-iteration-count: infinite;
   z-index: -4;
 `
@@ -47,6 +49,8 @@ export const TwinkleStars = styled(StarBackground)`
 box-shadow: ${twinkles.join(',')};
 animation-name: ${twinkleAnimation};
 animation-duration: 480s;
+animation-timing-function: linear;
+animation-delay: 0s;
 animation-iteration-count: infinite;
 z-index: -4;
 `

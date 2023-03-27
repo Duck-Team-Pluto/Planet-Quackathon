@@ -20,9 +20,9 @@ const App = () => {
       */}
 
       <StarBackground time='600s' density={350} blur={1} size={.125}></StarBackground>
-      <StarBackground time='500s' density={200} blur={1} size={.25}></StarBackground>
+      <StarBackground time='700s' density={200} blur={1} size={.25}></StarBackground>
       <StarBackground time='450s' density={100} blur={1.5} size={.5}></StarBackground>
-      <StarBackground time='600s' density={350} blur={.5} size={.125}></StarBackground>
+      <StarBackground time='800s' density={350} blur={.5} size={.125}></StarBackground>
 
       {/* TwinkleStars does not take values from props, but can be modified in styled-components/starbackground.js */}
       <TwinkleStars></TwinkleStars>
