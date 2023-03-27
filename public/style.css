@@ -1,5 +1,7 @@
 body {
   font-family: sans-serif;
+  background: black;
+  color: white;
 }
 
 a {
@@ -13,9 +15,20 @@ label {
 nav a {
   display: inline-block;
   margin: 1em;
+  text-decoration: none;
+  color: white;
+}
+
+nav a:hover {
+  cursor: pointer;
+  font-style: italic;
 }
 
 form div {
   margin: 1em;
   display: inline-block;
+}
+
+#main {
+  background-color: transparent;
 }
