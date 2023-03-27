@@ -1,15 +1,16 @@
-import React from "react";
 
-import Navbar from "../features/navbar/Navbar";
-import AppRoutes from "./AppRoutes";
-import Planet from "../features/singlePlanet/SinglePlanet";
+import React from 'react';
+import StarBackground from '../styled-components/starbackground';
+import Navbar from '../features/navbar/Navbar';
+import AppRoutes from './AppRoutes';
 
 const App = () => {
   return (
-    <div>
+    <div id="main">
       <Navbar />
       <AppRoutes />
       <Planet />
+      <StarBackground></StarBackground>
     </div>
   );
 };
