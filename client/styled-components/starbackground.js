@@ -20,7 +20,7 @@ const starMap2 = starMaker(200, 1.25, .5)
 const starMap3 = starMaker(40, 1.75, 1.25)
 const twinkles = starMaker(100, 1, .5)
 
-const rotateAnimation = keyframes`
+export const rotateAnimation = keyframes`
 from { transform: rotate(0deg);}
 to { transform: rotate(359deg);}
 `
@@ -36,6 +36,7 @@ export const StarBackground = styled.div`
   animation-name: ${rotateAnimation};
   animation-duration: ${props => props.time || '600s'};
   animation-iteration-count: infinite;
+  z-index: -4;
 `
 
 const twinkleAnimation = keyframes`
@@ -49,5 +50,6 @@ box-shadow: ${twinkles.join(',')};
 animation-name: ${twinkleAnimation};
 animation-duration: 480s;
 animation-iteration-count: infinite;
+z-index: -4;
 `
 
