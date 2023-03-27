@@ -14,7 +14,7 @@ const AppRoutes = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route to="/home" element={<Home />} />
-        <Route to="/planets/:id" element={<Planet />} />
+        <Route path="/planets/:id" element={<Planet />} />
       </Routes>
     </div>
   );
