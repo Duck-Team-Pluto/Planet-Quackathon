@@ -1,7 +1,9 @@
+
 import React from 'react';
 import { StarBackground, TwinkleStars } from '../styled-components/starbackground';
 import Navbar from '../features/navbar/Navbar';
 import AppRoutes from './AppRoutes';
+
 
 const App = () => {
   return (
