@@ -11,8 +11,10 @@ const Planet = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const planet = useSelector((state) => state.planet);
-  const next = +id + 1;
-  console.log(next);
+  let next = +id + 1;
+  let prev = +id - 1;
+  if (next > 9) next = 1;
+  if (prev < 1) prev = 9;
   useEffect(() => {
     dispatch(fetchPlanetAsync(id));
   }, [dispatch]);
@@ -63,7 +65,20 @@ const Planet = () => {
         </div>
       </div>
       <div>
-        <Link to={`/planets/${next}`}>Next Planet!</Link>
+        <a
+          onClick={() => {
+            window.location.href = `/planets/${prev}`;
+          }}
+        >
+          Previous Planet!
+        </a>
+        <a
+          onClick={() => {
+            window.location.href = `/planets/${next}`;
+          }}
+        >
+          Next Planet!
+        </a>
       </div>
     </div>
   );
