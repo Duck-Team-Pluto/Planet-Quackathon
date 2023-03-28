@@ -26,14 +26,18 @@ export const SinglePlanetImage = styled.div`
 `
 
 export const SimplePlanetImage = styled.div`
-  position: relative;
+  & {position: relative;
   height: ${(props) => `${(props.radius ** .25)*10}px`};
   width: ${(props) => `${(props.radius ** .25)*10}px`};
   border-radius: 50%;
   background: radial-gradient(circle at -100%, rgba(100, 60, 200, 1), rgba(180, 120, 255, 1));
   background-size: cover;
-  box-shadow: inset -50px -20px 90px 20px rgba(0, 0, 0, .75), 0px 0px 20px 6px rgba(255, 255, 255, .25);
-  color: #ccc;
+  box-shadow: inset -20px -10px 40px 10px rgba(0, 0, 0, .75), 0px 0px 20px 6px rgba(255, 255, 255, .25);
+  color: #ccc;}
+  &:hover {
+    height: ${(props) => `${(props.radius ** .25)*11}px`};
+    width: ${(props) => `${(props.radius ** .25)*11}px`};
+  }
 `
 
 export const Rings = styled.div`
