@@ -26,14 +26,23 @@ export const SinglePlanetImage = styled.div`
 `
 
 export const SimplePlanetImage = styled.div`
-  & {position: relative;
+  & {
+  position: absolute;
   height: ${(props) => `${(props.radius ** .25)*10}px`};
   width: ${(props) => `${(props.radius ** .25)*10}px`};
   border-radius: 50%;
   background: radial-gradient(circle at -100%, rgba(100, 60, 200, 1), rgba(180, 120, 255, 1));
   background-size: cover;
   box-shadow: inset -20px -10px 40px 10px rgba(0, 0, 0, .75), 0px 0px 20px 6px rgba(255, 255, 255, .25);
-  color: #ccc;}
+  color: #ccc;
+  animation-name: ${planetRotate};
+  animation-duration: 20s;
+  animation-delay: 0s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+}
+
   &:hover {
     height: ${(props) => `${(props.radius ** .25)*11}px`};
     width: ${(props) => `${(props.radius ** .25)*11}px`};
@@ -56,10 +65,10 @@ export const Rings = styled.div`
 export const TheSun = styled.div`
   position: fixed;
   display: block;
-  top: 15%;
+  top: 30%;
   left: 42%;
-  width: 20rem;
-  height: 20rem;
+  width: 15rem;
+  height: 15rem;
   border-radius: 50%;
   background-repeat: no-repeat;
   background: radial-gradient(circle at -100%, rgba(255, 180, 76, 1), rgba(255, 200, 100, 1));
