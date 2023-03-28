@@ -27,7 +27,7 @@ const SolarSystem = () => {
            yPos ={13}
            diameter={500}
             rotation={40*planet.id}
-            timeOffset={planet.id*2.3}
+            timeOffset={planet.id*5.6}
             >
             <Link to={`/planets/${planet.id}`}><SimplePlanetImage radius={planet.radiusInMiles}>{planet.name}</SimplePlanetImage></Link></PlanetOrbit>
             )}) : null}

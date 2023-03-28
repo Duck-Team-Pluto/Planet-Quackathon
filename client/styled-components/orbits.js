@@ -20,7 +20,7 @@ position: fixed;
   height: ${props=>`${props.diameter}px`};;
   border-radius: 50%;
   animation-name: ${orbitRotate};
-  animation-duration: 20s;
+  animation-duration: 50s;
   animation-delay: ${props=>`-${props.timeOffset}s`};
   animation-timing-function: linear;
   animation-iteration-count: infinite;
