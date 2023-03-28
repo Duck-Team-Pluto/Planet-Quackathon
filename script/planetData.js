@@ -34,7 +34,7 @@ const planets = [
     mass: 5.972 * 10 ** 24,
     orbitCirc: 5.84058059 * 10 ** 8,
     orbitEcc: 0.01671123,
-    factOne: "The Earth isn't flat",
+    factOne: "The Earth isn't flat!",
     factTwo: "Earth rotates at around 1000 miles an hour",
     factThree:
       "The planet's surface is bumpy, and water flow, ice drift and the movement of the tectonic plates beneath Earth's crust all change the pull of gravity over the surface.",
@@ -77,7 +77,7 @@ const planets = [
     factOne: "You cannot stand on Saturn.",
     factTwo:
       "Its beautiful rings are not solid. They are made up of bits of ice, dust and rock.",
-    factThree: "This planet is named after the Roman god of farming",
+    factThree: "This planet is named after the Roman god of farming.",
     core: "Gas",
   },
   {
