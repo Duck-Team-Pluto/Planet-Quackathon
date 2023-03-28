@@ -1,33 +1,35 @@
-# New Boilerplate
+# Planet Quackathon
 
-## Setup
+Planet Quackathon is an educational website that teaches people about the solar system.
 
-## Customize
+## Set up and run the project
 
-Now that you've got the code, follow these steps to get acclimated:
+1. Create a PostgreSQL database with the name `quackathon`
+2. Clone the project's main branch to your local computer
+3. Run `npm install` to install packages
+4. Run `npm run seed` to seed the database
+5. Run `npm run start:dev` to run the project
+6. Open http://localhost:8080 to view it in your browser
 
-- Update project name and description in `package.json`
-- `npm install`
-- Create two postgres databases (`MY_APP_NAME` should match the `name`
-  parameter in `package.json`):
-- These commands will create both your **development** and **test** databases
+## Developers
 
-```
-createdb <YOUR APP NAME HERE FROM package.json>
-createdb <YOUR APP NAME HERE FROM package.json>-test
-```
+- Rachel Eckert
+- Mae May
+- Madeleine Lloyd-Davies
+- Lindsay Powell
 
-- By default, running `npm test` will use your test database, while
-  regular development uses development database
+## Technologies Used
 
-## Start
+- ReactJS
+- Redux Toolkit
+- Javascript
+- CSS
+- PostgreSQL
+- Sequelize
+- Express
+- Node.js
 
-Sync and seed your database by running `npm run seed`. Running `npm run start:dev` will make great things happen!
+### Sources
 
-- start:dev will both start your server and build your client side files using webpack
-- start:dev:logger is the same as start:dev, but you will see your SQL queries (can be helpful for debugging)
-- start:dev:seed will start your server and also seed your database (this is useful when you are making schema changes and you don't want to run your seed script separately)
-
-Sources:
-https://solarsystem.nasa.gov/
-https://www.qrg.northwestern.edu/projects/vss/docs/space-environment/3-orbital-lengths-distances.html#:~:text=OBJECT,Sun
+- [NASA](https://solarsystem.nasa.gov/)
+- [Northwestern University](https://www.qrg.northwestern.edu/projects/vss/docs/space-environment/3-orbital-lengths-distances.html#:~:text=OBJECT,Sun)
