@@ -1,47 +1,69 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { selectPlanet, fetchPlanetAsync } from "./singlePlanetSlice";
-import { Rings, SinglePlanetImage } from "../../styled-components/planetdisplays";
+import {
+  Rings,
+  SinglePlanetImage,
+} from "../../styled-components/planetdisplays";
 
 const Planet = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
-  // console.log(id);
   const planet = useSelector((state) => state.planet);
-  console.log(planet);
-  // const { id } = useParams();
+  const next = +id + 1;
+  console.log(next);
   useEffect(() => {
     dispatch(fetchPlanetAsync(id));
   }, [dispatch]);
   return (
-    <div  key={planet.id}>
+    <div key={planet.id}>
       <SinglePlanetImage radius={planet.radiusInMiles}>
-         <Rings radius={planet.radiusInMiles}></Rings></SinglePlanetImage>
-         <div className="single-planet">
-      <h1>{planet.name}</h1>
-      <h2>Radius: {planet.radiusInMiles}</h2>
-      <h2>Distance from the Sun: {planet.distanceInMiles}</h2>
-      <h2>Core Type: {planet.core}</h2>
-      <h3>Fun Facts!!!</h3>
-      <div className="fun-facts">
-        <h4>{planet.factOne}</h4>
-        <h4>{planet.factTwo}</h4>
-        <h4>{planet.factThree}</h4>
+        <Rings radius={planet.radiusInMiles}></Rings>
+      </SinglePlanetImage>
+      <div className="single-planet">
+        <h1>{planet.name}</h1>
+        <h2>Radius (mi): {planet.radiusInMiles}</h2>
+        <h2>Distance from the Sun (mi): {planet.distanceInMiles}</h2>
+        <h2>Core Type: {planet.core}</h2>
+        <h2>Fun Facts!!!</h2>
+        <div className="fun-facts">
+          <h3>{planet.factOne}</h3>
+          <h3>{planet.factTwo}</h3>
+          <h3>{planet.factThree}</h3>
+        </div>
+        <div>
+          <h3>{planet.name}'s Moons:</h3>
+          <table>
+            <thead>
+              <tr>
+                <th align="right">Name</th>
+                <th align="right">Origin of Name</th>
+                <th align="right">Radius in Miles</th>
+              </tr>
+            </thead>
+          </table>
+          {planet.moons && planet.moons.length
+            ? planet.moons.map((moon) => {
+                return (
+                  <div key={moon.id}>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <th>{moon.name}</th>
+                          <th>{moon.history}</th>
+                          <th>{moon.radiusInMiles}</th>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                );
+              })
+            : "This Planet doesn't have any moons!"}
+        </div>
       </div>
       <div>
-        {planet.moons && planet.moons.length
-          ? planet.moons.map((moon) => {
-              return (
-                <div key={moon.id}>
-                  <p>{moon.name}</p>
-                  <p>{moon.history}</p>
-                  <p>{moon.radiusInMiles}</p>
-                </div>
-              );
-            })
-          : "This Planet doesn't have any moons!"}
-          </div>
+        <Link to={`/planets/${next}`}>Next Planet!</Link>
       </div>
     </div>
   );
