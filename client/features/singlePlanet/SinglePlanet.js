@@ -1,11 +1,8 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams, Link } from "react-router-dom";
-import { selectPlanet, fetchPlanetAsync } from "./singlePlanetSlice";
-import {
-  Rings,
-  SinglePlanetImage,
-} from "../../styled-components/planetdisplays";
+import { useParams } from "react-router-dom";
+import { fetchPlanetAsync } from "./singlePlanetSlice";
+import { SinglePlanetImage } from "../../styled-components/planetdisplays";
 import Moons from "./Moons";
 import PlanetInfo from "./PlanetInfo";
 
@@ -35,7 +32,7 @@ const Planet = () => {
       }
 
 
-      <div>
+      <div className="planet-scroll">
         <a
           onClick={() => {
             window.location.href = `/planets/${prev}`;
