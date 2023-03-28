@@ -11,6 +11,7 @@ const Moon = () => {
   let prev = +id - 1;
   if (next > 9) next = 1;
   if (prev < 1) prev = 9;
+  let planet = moon.planet;
   useEffect(() => {
     dispatch(fetchMoonAsync(id));
   }, [dispatch]);
@@ -18,7 +19,9 @@ const Moon = () => {
     <div key={moon.id}>
       <div className="single-planet">
         <h1>{moon.name}</h1>
-        <h2>Associated Planet: {moon.planet.name}</h2>
+        <div>
+          {moon.planet ? <h2>Associated Planet: {moon.planet.name}</h2> : null}
+        </div>
         <h2>Radius (mi): {moon.radiusInMiles}</h2>
         <h2>History of Name: {moon.history}</h2>
       </div>
