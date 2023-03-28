@@ -17,6 +17,11 @@ const Planet = () => {
   useEffect(() => {
     dispatch(fetchPlanetAsync(id));
   }, [dispatch]);
+
+  let radiusNum = +planet.radiusInMiles;
+  let distanceNum = +planet.distanceInMiles;
+  distanceNum = distanceNum.toLocaleString("en-US");
+  radiusNum = radiusNum.toLocaleString("en-US");
   return (
     <div key={planet.id}>
       <SinglePlanetImage radius={planet.radiusInMiles}></SinglePlanetImage>
@@ -33,18 +38,17 @@ const Planet = () => {
 
 
       <div className="planet-scroll">
+
         <a
           onClick={() => {
             window.location.href = `/planets/${prev}`;
-          }}
-        >
+          }}>
           Previous Planet!
         </a>
         <a
           onClick={() => {
             window.location.href = `/planets/${next}`;
-          }}
-        >
+          }}>
           Next Planet!
         </a>
       </div>
