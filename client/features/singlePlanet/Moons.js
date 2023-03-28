@@ -1,12 +1,10 @@
 import React from "react";
 
 const Moons = (props) => {
-
   const moons = props.moons;
   const planetName = props.planetName;
 
-console.log(moons)
-
+  console.log(moons);
 
   return (
     <div>
@@ -20,6 +18,7 @@ console.log(moons)
           </tr>
         </thead>
       </table>
+
       {/*moons.map((moon) => {
       return (
 
@@ -35,11 +34,14 @@ console.log(moons)
             </table>
           </div>
 
+
             );
           })
         */}
-    </div>
-  )
-}
 
-export default Moons
+      <p>*Some moon radii may vary depending on moon shape*</p>
+    </div>
+  );
+};
+
+export default Moons;
