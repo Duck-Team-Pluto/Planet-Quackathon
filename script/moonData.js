@@ -110,7 +110,7 @@ const moons = [
   },
   {
     name: "Nereid",
-    history: "A group of ea nymphs.",
+    history: "A group of sea nymphs.",
     radiusInMiles: 105.63,
     distanceInMiles: 3426128,
     planetId: 8,
