@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchPlanetAsync } from "./singlePlanetSlice";
-import { SinglePlanetImage } from "../../styled-components/planetdisplays";
+import { SinglePlanetImage } from "../../styled-components/PlanetDisplays";
 import Moons from "./Moons";
 import PlanetInfo from "./PlanetInfo";
 

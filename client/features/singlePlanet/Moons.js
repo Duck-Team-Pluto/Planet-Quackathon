@@ -20,7 +20,7 @@ console.log(moons)
           </tr>
         </thead>
       </table>
-      {moons.map((moon) => {
+      {/*moons.map((moon) => {
       return (
 
           <div key={moon.id}>
@@ -37,7 +37,7 @@ console.log(moons)
 
             );
           })
-         }
+        */}
     </div>
   )
 }
