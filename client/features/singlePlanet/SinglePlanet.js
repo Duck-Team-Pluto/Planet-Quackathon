@@ -18,6 +18,11 @@ const Planet = () => {
   useEffect(() => {
     dispatch(fetchPlanetAsync(id));
   }, [dispatch]);
+
+  let radiusNum = +planet.radiusInMiles;
+  let distanceNum = +planet.distanceInMiles;
+  distanceNum = distanceNum.toLocaleString("en-US");
+  radiusNum = radiusNum.toLocaleString("en-US");
   return (
     <div key={planet.id}>
       <SinglePlanetImage radius={planet.radiusInMiles}>
@@ -25,8 +30,8 @@ const Planet = () => {
       </SinglePlanetImage>
       <div className="single-planet">
         <h1>{planet.name}</h1>
-        <h2>Radius (mi): {planet.radiusInMiles}</h2>
-        <h2>Distance from the Sun (mi): {planet.distanceInMiles}</h2>
+        <h2>Radius (mi): {radiusNum}</h2>
+        <h2>Distance from the Sun (mi): {distanceNum}</h2>
         <h2>Core Type: {planet.core}</h2>
         <h2>Fun Facts!!!</h2>
         <div className="fun-facts">
@@ -47,6 +52,8 @@ const Planet = () => {
           </table>
           {planet.moons && planet.moons.length
             ? planet.moons.map((moon) => {
+                let rad = +moon.radiusInMiles;
+                rad = rad.toLocaleString("en-US");
                 return (
                   <div key={moon.id}>
                     <table>
@@ -54,7 +61,7 @@ const Planet = () => {
                         <tr>
                           <th>{moon.name}</th>
                           <th>{moon.history}</th>
-                          <th>{moon.radiusInMiles}</th>
+                          <th>{rad}</th>
                         </tr>
                       </tbody>
                     </table>
@@ -68,15 +75,13 @@ const Planet = () => {
         <a
           onClick={() => {
             window.location.href = `/planets/${prev}`;
-          }}
-        >
+          }}>
           Previous Planet!
         </a>
         <a
           onClick={() => {
             window.location.href = `/planets/${next}`;
-          }}
-        >
+          }}>
           Next Planet!
         </a>
       </div>
