@@ -7,7 +7,12 @@ const Navbar = () => {
     <div>
       <nav>
         <div>
-          <Link to="/home">Home</Link>
+          <h2>MISSION CONTROL</h2>
+        </div>
+        <div className='navlinks'>
+          <Link to='/home'>Home</Link>
+          <p>this will be a link to "about"</p>
+          <p>this will be a list of planets</p>
         </div>
       </nav>
     </div>

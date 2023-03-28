@@ -12,6 +12,11 @@ label {
   display: block;
 }
 
+nav {
+  display: flex;
+  flex-direction: column;
+}
+
 nav a {
   display: inline-block;
   margin: 1em;
@@ -22,6 +27,19 @@ nav a {
 nav a:hover {
   cursor: pointer;
   font-style: italic;
+}
+
+.navlinks {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+/* .navlinks * {
+  padding: 3em;
+} */
+
+h2 {
+  text-align: center;
 }
 
 form div {
