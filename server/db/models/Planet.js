@@ -2,6 +2,10 @@ const Sequelize = require("sequelize");
 const db = require("../db");
 
 const Planet = db.define("planet", {
+  id: {
+    type: Sequelize.INTEGER,
+    primaryKey: true,
+  },
   name: {
     type: Sequelize.STRING,
     unique: true,
