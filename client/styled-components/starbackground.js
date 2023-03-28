@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 
 // <----    STARS ARE BORN    ---->
@@ -15,19 +15,43 @@ const starMaker = (quantity, focus, starsize) => {
   })
 }
 
-const starMap1 = starMaker(350, 1.5, .25)
-const starMap2 = starMaker(200, 1.25, .5)
-const starMap3 = starMaker(40, 1.75, 1.25)
+const twinkles = starMaker(100, 1, .5)
 
+export const rotateAnimation = keyframes`
+0% { transform: rotate(0deg);}
+50% { transform: rotate(180deg);}
+100% { transform: rotate(359deg)}
+`
 
-const StarBackground = styled.div`
+export const StarBackground = styled.div`
   position: fixed;
   top: 50%;
   left: 50%;
   height: 2px;
   width: 2px;
   border-radius: 100%;
-  box-shadow: ${starMap1.join(',')}, ${starMap2.join(',')}, ${starMap3.join(',')};
+  box-shadow: ${props => starMaker(props.density, props.blur, props.size).join(',') || starMaker(350, 1.5, .25)};
+  animation-name: ${rotateAnimation};
+  animation-duration: ${props => props.time || '600s'};
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  z-index: -4;
 `
 
-export default StarBackground
+const twinkleAnimation = keyframes`
+  0% { transform: rotate(0deg); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: rotate(359deg); opacity: 0; }
+`
+
+export const TwinkleStars = styled(StarBackground)`
+box-shadow: ${twinkles.join(',')};
+animation-name: ${twinkleAnimation};
+animation-duration: 480s;
+animation-timing-function: linear;
+animation-delay: 0s;
+animation-iteration-count: infinite;
+z-index: -4;
+`
+

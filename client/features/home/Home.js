@@ -1,5 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { SinglePlanetImage, TheSun } from "../../styled-components/planetdisplays";
+import SolarSystem from "../solarSystem/SolarSystem";
 
 /**
  * COMPONENT
@@ -7,7 +9,7 @@ import { useSelector } from "react-redux";
 const Home = (props) => {
   return (
     <div>
-      <h3>Welcome</h3>
+      <SolarSystem></SolarSystem>
     </div>
   );
 };
