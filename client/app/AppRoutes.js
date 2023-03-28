@@ -11,7 +11,7 @@ import Home from "../features/home/Home";
 
 const AppRoutes = () => {
   return (
-    <div>
+    <div id="router">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
