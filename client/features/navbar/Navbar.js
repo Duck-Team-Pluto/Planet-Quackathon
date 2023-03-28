@@ -1,7 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { logout } from "../../app/store";
 
 const Navbar = () => {
   return (
@@ -9,7 +8,6 @@ const Navbar = () => {
       <nav>
         <div>
           <Link to="/home">Home</Link>
-          <button type="button">Logout</button>
         </div>
       </nav>
     </div>
