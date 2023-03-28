@@ -19,9 +19,8 @@ const Moons = (props) => {
         </thead>
       </table>
 
-      {/*moons.map((moon) => {
-      return (
-
+      {/* {moons.map((moon) => {
+        return (
           <div key={moon.id}>
             <table>
               <tbody>
@@ -33,11 +32,8 @@ const Moons = (props) => {
               </tbody>
             </table>
           </div>
-
-
-            );
-          })
-        */}
+        );
+      })} */}
 
       <p>*Some moon radii may vary depending on moon shape*</p>
     </div>
