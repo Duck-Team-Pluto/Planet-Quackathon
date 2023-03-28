@@ -14,6 +14,7 @@ router.get("/:id", async (req, res, next) => {
   try {
     const planet = await Planet.findByPk(req.params.id, {
       include: Moon,
+      order: [[Moon, "name", "ASC"]],
     });
     if (!planet) res.sendStatus(404);
     else {

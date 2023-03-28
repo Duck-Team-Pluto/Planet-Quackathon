@@ -11,6 +11,7 @@ const planets = [
     factThree:
       "Due to solar radiation and extreme temperatures, it is very unlikely that life could survive on the planet.",
     core: "Solid",
+    id: 1,
   },
   {
     name: "Venus",
@@ -26,6 +27,7 @@ const planets = [
     factThree:
       "Its thick atmosphere is full of the greenhouse gas carbon dioxide, and it has clouds of sulfuric acid.",
     core: "Solid",
+    id: 2,
   },
   {
     name: "Earth",
@@ -39,6 +41,7 @@ const planets = [
     factThree:
       "The planet's surface is bumpy, and water flow, ice drift and the movement of the tectonic plates beneath Earth's crust all change the pull of gravity over the surface.",
     core: "Solid",
+    id: 3,
   },
   {
     name: "Mars",
@@ -52,6 +55,7 @@ const planets = [
     factThree:
       "Mars is home to Olympus Mons, a dormant volcano and the largest volcano and highest mountain in our solar system. It is 16 miles high and 600 km across the base, making it 3x the height of Mount Everest.",
     core: "Solid",
+    id: 4,
   },
   {
     name: "Jupiter",
@@ -66,6 +70,7 @@ const planets = [
     factThree:
       "It has big storms like the Great Red Spot, which has been going for hundreds of years.",
     core: "Solid",
+    id: 5,
   },
   {
     name: "Saturn",
@@ -79,6 +84,7 @@ const planets = [
       "Its beautiful rings are not solid. They are made up of bits of ice, dust and rock.",
     factThree: "This planet is named after the Roman god of farming",
     core: "Gas",
+    id: 6,
   },
   {
     name: "Uranus",
@@ -92,6 +98,7 @@ const planets = [
     factTwo: "Uranus is surrounded by a set of 13 rings.",
     factThree: "Uranus is the only planet that spins on its side.",
     core: "Solid",
+    id: 7,
   },
   {
     name: "Neptune",
@@ -107,6 +114,7 @@ const planets = [
     factThree:
       "Neptune is an ice giant. Its made up of dense icy materials, mainly water, methane and ammonia, above a small rocky core.",
     core: "Solid",
+    id: 8,
   },
   {
     name: "Pluto",
@@ -121,6 +129,7 @@ const planets = [
     factThree:
       "Pluto is the only place other than Earth in our solar system that has white-peaked mountains, but these white caps arent made of snow. Instead, theyre made of methane frost.",
     core: "Solid",
+    id: 9,
   },
 ];
 
