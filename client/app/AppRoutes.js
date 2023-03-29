@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Planet from "../features/singlePlanet/SinglePlanet";
 import Moon from "../features/singleMoon/SingleMoon";
+import About from "../features/about/About";
 
 import Home from "../features/home/Home";
 
@@ -11,12 +12,13 @@ import Home from "../features/home/Home";
 
 const AppRoutes = () => {
   return (
-    <div id="router">
+    <div id='router'>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/planets/:id" element={<Planet />} />
-        <Route path="/moons/:id" element={<Moon />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/planets/:id' element={<Planet />} />
+        <Route path='/moons/:id' element={<Moon />} />
+        <Route path='/about' element={<About />} />
       </Routes>
     </div>
   );
