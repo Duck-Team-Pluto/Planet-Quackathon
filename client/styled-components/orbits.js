@@ -14,10 +14,12 @@ to {
 export const PlanetOrbit = styled.div`
 position: fixed;
   display: block;
-  top: ${props=>`${props.yPos}%`};
-  left: ${props=>`${props.xPos}%`};
-  width: ${props=>`${props.diameter}px`};
-  height: ${props=>`${props.diameter}px`};;
+  top: 50%;
+  left: 50%;
+  width: ${props=>`${props.d1}vh`};
+  height: ${props=>`${props.d2}vh `};
+  margin-top: ${props=>`${-props.d2/2}vh`};
+  margin-left: ${props=>`${-props.d1/2}vh`};
   border-radius: 50%;
   animation-name: ${orbitRotate};
   animation-duration: 50s;

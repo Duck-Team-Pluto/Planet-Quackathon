@@ -25,12 +25,18 @@ const Planet = () => {
   return (
     <div key={planet.id}>
       <SinglePlanetImage radius={planet.radiusInMiles}></SinglePlanetImage>
-      {planet && planet.name ? <PlanetInfo planet={planet}></PlanetInfo> : null}
-      {planet.moons && planet.moons.length ? (
-        <Moons planetName={planet.name} moons={planet.moons}></Moons>
-      ) : (
-        "This planet has no moons!"
-      )}
+
+      {
+        planet && planet.name ?
+        <PlanetInfo planet={planet}></PlanetInfo>
+        : null
+      }
+      {
+        planet.moons && planet.moons.length
+        ? <Moons planetName={planet.name} moons={planet.moons}></Moons>
+        : null
+      }
+
 
       <div className="planet-scroll">
         <a
