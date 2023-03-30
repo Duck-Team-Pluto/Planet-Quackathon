@@ -1,4 +1,5 @@
-export const aboutProject = `This is the project we did, here is information about quackathon, etc.`;
+export const aboutProject = `This web app was completed over the course of one week for a Quackathon challenge on the #DearJuniorDev discord. We were tasked with creating a SPA (single page app) to teach students about the solar system. There were several additional requirements for how the app would be built--for more details, see the readme document in our Github repo for this project. This project was completed by Rachel Eckert, Madeleine Lloyd-Davies, Mae May, and Lindsay Powell, who attended the Grace Hopper coding bootcamp together from November-February 2023.
+`;
 export const aboutTeam = [
   {
     name: "Rachel Eckert",
