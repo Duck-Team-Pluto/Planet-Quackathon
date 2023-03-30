@@ -2,16 +2,16 @@ html {
   overflow-y: scroll;
   color: #d8f3dc;
   /* overflow: scroll;*/
-  overflow-x: scroll;
+  overflow-x: hidden;
   height: 100%;
   background: black;
   padding: 0;
   margin: 0;
 }
-::-webkit-scrollbar {
+/*::-webkit-scrollbar {
   width: 0px;
-  background: transparent; /* make scrollbar transparent*/
-}
+  background: transparent; /* make scrollbar transparent
+}*/
 
 body,
 #app,
@@ -129,6 +129,7 @@ form div {
   background-color: #3390c1;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+  border-radius: 34px;
 }
 .slider:before {
   position: absolute;
@@ -140,6 +141,7 @@ form div {
   background-color: white;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+  border-radius: 50%;
 }
 input:checked + .slider {
   background-color: #153b50;
