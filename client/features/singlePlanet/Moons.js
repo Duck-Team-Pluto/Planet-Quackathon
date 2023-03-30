@@ -36,24 +36,11 @@ const StyledAccordion = styled(Accordion)`
 const Moons = (props) => {
   const moons = props.moons;
   const planetName = props.planetName;
-  const [distance, setDistance] = useState(false);
-
-  const handleChange = (e) => {
-    setDistance(e.target.checked);
-    console.log(e.target.checked);
-  };
+  const units = props.units;
   console.log(moons);
 
   return (
-    <div>
-      <label className="switch">
-        <input type="checkbox" name="distance" onClick={handleChange} />
-
-        <span className="slider"></span>
-      </label>
-
-      {distance ? <p>Switch to miles</p> : <p>Switch to kilometers</p>}
-      <h1>{planetName}</h1>
+    <Grid mb="30px">
       <StyledAccordion>
         <AccordionSummary sx={{ color: "#ccc" }}>
           Click to see {planetName}'s Moons:
@@ -64,7 +51,7 @@ const Moons = (props) => {
               <TableRow>
                 <StyledCell align="left">Name</StyledCell>
                 <StyledCell align="left">Origin of Name</StyledCell>
-                {distance ? (
+                {units==="kilometers" ? (
                   <StyledCell align="left">Radius in Kilometers</StyledCell>
                 ) : (
                   <StyledCell align="left">Radius in Miles</StyledCell>
@@ -87,7 +74,7 @@ const Moons = (props) => {
                       </Tooltip>
                     </StyledCell>
                     <StyledCell>{moon.history}</StyledCell>
-                    {distance ? (
+                    {units="kilometers" ? (
                       <StyledCell>{radiusKm}</StyledCell>
                     ) : (
                       <StyledCell>{moon.radiusInMiles}</StyledCell>

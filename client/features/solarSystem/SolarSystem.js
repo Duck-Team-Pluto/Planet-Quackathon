@@ -1,10 +1,8 @@
 import { useDispatch, useSelector } from "react-redux"
-import { SimplePlanetImage, TheSun } from "../../styled-components/PlanetDisplays"
+import { TheSun } from "../../styled-components/PlanetDisplays"
 import React, { useEffect } from "react"
 import { fetchAllPlanetsAsync } from "./solarSystemSlice"
-import { Link } from "react-router-dom"
-import { PlanetOrbit } from "../../styled-components/Orbits"
-import PlanetList from "../home/PlanetList"
+import PlanetList from "../solarSystem/PlanetList"
 
 const SolarSystem = () => {
   const planets = useSelector((state)=>state.planets)

@@ -1,10 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchPlanetAsync } from "./singlePlanetSlice";
 import { SinglePlanetImage } from "../../styled-components/PlanetDisplays";
 import Moons from "./Moons";
 import PlanetInfo from "./PlanetInfo";
+import { ColumnContainer, RowContainer, SinglePlanetImageContainer } from "../../styled-components/Containers";
+import SpaceLink from "../../styled-components/SpaceLink";
 
 const Planet = () => {
   const dispatch = useDispatch();
@@ -14,48 +16,51 @@ const Planet = () => {
   let prev = +id - 1;
   if (next > 9) next = 1;
   if (prev < 1) prev = 9;
+
   useEffect(() => {
     dispatch(fetchPlanetAsync(id));
-  }, [dispatch]);
+  }, [dispatch, id]);
 
-  let radiusNum = +planet.radiusInMiles;
-  let distanceNum = +planet.distanceInMiles;
-  distanceNum = distanceNum.toLocaleString("en-US");
-  radiusNum = radiusNum.toLocaleString("en-US");
+  const [units, setUnits] = useState('miles');
+
+  const handleChange = (e) => {
+    setUnits(e.target.checked ? 'kilometers' : 'miles')
+    console.log(e.target.checked);
+  };
+
   return (
     <div key={planet.id}>
-      <SinglePlanetImage radius={planet.radiusInMiles}></SinglePlanetImage>
+    <RowContainer className="previous-and-next-buttons">
+      <SpaceLink to={`/planets/${prev}`} text='Previous Planet!'/>
+      <ColumnContainer className ="units-toggle" border={false}><label className="switch">
+        <input type="checkbox" name="units" onClick={handleChange} />
+        <span className="slider"></span>
+      </label>Units: {units==='miles' ? 'Miles' : 'Km'}</ColumnContainer>
+      <SpaceLink to={`/planets/${next}`} text='Next Planet!'/>
+
+    </RowContainer>
+    <RowContainer className="single-planet-main-container">
+
 
       {
         planet && planet.name ?
-        <PlanetInfo planet={planet}></PlanetInfo>
+        <PlanetInfo planet={planet} units={units}></PlanetInfo>
         : null
       }
+      <ColumnContainer>
+        <SinglePlanetImageContainer>
+          <SinglePlanetImage radius={planet.radiusInMiles}></SinglePlanetImage>
+        </SinglePlanetImageContainer>
       {
         planet.moons && planet.moons.length
-        ? <Moons planetName={planet.name} moons={planet.moons}></Moons>
+        ? <Moons planetName={planet.name} moons={planet.moons} units={units}></Moons>
         : null
       }
+      </ColumnContainer>
+</RowContainer>
 
 
-      <div className="planet-scroll">
-        <a
-          onClick={() => {
-            window.location.href = `/planets/${prev}`;
-          }}
-        >
-          Previous Planet!
-        </a>
-      </div>
-      <div className="planet-next">
-        <a
-          onClick={() => {
-            window.location.href = `/planets/${next}`;
-          }}
-        >
-          Next Planet!
-        </a>
-      </div>
+
     </div>
   );
 };

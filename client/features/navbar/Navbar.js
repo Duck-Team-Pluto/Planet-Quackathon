@@ -1,14 +1,14 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { RowContainer } from "../../styled-components/Containers";
+import SpaceLink from "../../styled-components/SpaceLink";
 
 const Navbar = () => {
   return (
     <div>
       <nav>
-        <div>
-          <Link to="/home">Home</Link>
-        </div>
+
+          <SpaceLink to={`/home/`} text='Home' />
+
       </nav>
     </div>
   );

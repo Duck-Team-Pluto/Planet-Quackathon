@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { StarBackground } from '../styled-components/starbackground';
+import { StarBackground } from '../styled-components/StarBackground';
 
 const AppBackground = () => {
   return (
@@ -15,9 +15,9 @@ const AppBackground = () => {
       */}
 
 <StarBackground time='850s' density={300} blur={.25} size={.0675}></StarBackground>
-      <StarBackground time='550s' density={150} blur={.35} size={.2}></StarBackground>
-      <StarBackground time='950s' density={250} blur={.35} size={.09125}></StarBackground>
-      <StarBackground time='1250s' density={200} blur={.75} size={.0675}></StarBackground>
+      <StarBackground time='550s' density={150} blur={.35} size={.1}></StarBackground>
+      <StarBackground time='950s' density={250} blur={.35} size={.07125}></StarBackground>
+      <StarBackground time='1250s' density={200} blur={.35} size={.0675}></StarBackground>
       <StarBackground time='1550s' density={200} blur={.25} size={.0175}></StarBackground>
       <StarBackground time='1050s' density={200} blur={.25} size={.0175}></StarBackground>
       <StarBackground time='850s' density={200} blur={.15} size={.0175}></StarBackground>

@@ -23,7 +23,7 @@ const StyledSpaceLink = styled.div`
 
 const SpaceLink = (props) => {
   return(
-    <StyledSpaceLink>
+    <StyledSpaceLink className="space-link">
     <Link to={props.to}>{props.text}</Link></StyledSpaceLink>
   )
 }
