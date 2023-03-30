@@ -45,7 +45,7 @@ const Moons = (props) => {
   console.log(moons);
 
   return (
-    <Grid mb="30px">
+    <div>
       <label className="switch">
         <input type="checkbox" name="distance" onClick={handleChange} />
 
@@ -100,7 +100,7 @@ const Moons = (props) => {
         </AccordionDetails>
       </StyledAccordion>
       <p>*Some moon radii may vary depending on moon shape*</p>
-    </Grid>
+    </div>
   );
 };
 
