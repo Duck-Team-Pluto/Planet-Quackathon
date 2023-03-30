@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { StarBackground } from '../styled-components/starbackground';
+import { StarBackground } from '../styled-components/StarBackground';
 
 const AppBackground = () => {
   return (

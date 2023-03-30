@@ -6,6 +6,7 @@ import { SinglePlanetImage } from "../../styled-components/PlanetDisplays";
 import Moons from "./Moons";
 import PlanetInfo from "./PlanetInfo";
 import { ColumnContainer, RowContainer, SinglePlanetImageContainer } from "../../styled-components/Containers";
+import SpaceLink from "../../styled-components/SpaceLink";
 
 const Planet = () => {
   const dispatch = useDispatch();
@@ -15,9 +16,10 @@ const Planet = () => {
   let prev = +id - 1;
   if (next > 9) next = 1;
   if (prev < 1) prev = 9;
+
   useEffect(() => {
     dispatch(fetchPlanetAsync(id));
-  }, [dispatch]);
+  }, [dispatch, id]);
 
   let radiusNum = +planet.radiusInMiles;
   let distanceNum = +planet.distanceInMiles;
@@ -25,7 +27,11 @@ const Planet = () => {
   radiusNum = radiusNum.toLocaleString("en-US");
   return (
     <div key={planet.id}>
-    <RowContainer>
+    <RowContainer className="previous-and-next-buttons">
+      <SpaceLink to={`/planets/${prev}`} text='Previous Planet!'/>
+      <SpaceLink to={`/planets/${next}`} text='Next Planet!'/>
+    </RowContainer>
+    <RowContainer className="single-planet-main-container">
 
 
       {
@@ -45,24 +51,7 @@ const Planet = () => {
       </ColumnContainer>
 </RowContainer>
 
-      <div className="planet-scroll">
-        <a
-          onClick={() => {
-            window.location.href = `/planets/${prev}`;
-          }}
-        >
-          Previous Planet!
-        </a>
-      </div>
-      <div className="planet-next">
-        <a
-          onClick={() => {
-            window.location.href = `/planets/${next}`;
-          }}
-        >
-          Next Planet!
-        </a>
-      </div>
+
 
     </div>
   );

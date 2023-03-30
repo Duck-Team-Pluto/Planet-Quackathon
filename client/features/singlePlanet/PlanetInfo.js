@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { ColumnContainer } from "../../styled-components/Containers";
 const PlanetInfo = (props) => {
   const planet = props.planet;
   let radiusNum = +planet.radiusInMiles;
@@ -16,7 +17,7 @@ const PlanetInfo = (props) => {
     console.log(e.target.checked);
   };
   return (
-    <div className="single-planet">
+    <ColumnContainer className="single-planet-info">
       <label className="switch">
         <input type="checkbox" name="distance" onClick={handleChange} />
 
@@ -42,7 +43,7 @@ const PlanetInfo = (props) => {
         <h3>{planet.factTwo}</h3>
         <h3>{planet.factThree}</h3>
       </div>
-    </div>
+      </ColumnContainer>
   );
 };
 
