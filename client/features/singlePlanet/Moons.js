@@ -36,7 +36,7 @@ const StyledAccordion = styled(Accordion)`
 const Moons = (props) => {
   const moons = props.moons;
   const planetName = props.planetName;
-  const distance = props.distance;
+  const units = props.units;
   console.log(moons);
 
   return (
@@ -51,7 +51,7 @@ const Moons = (props) => {
               <TableRow>
                 <StyledCell align="left">Name</StyledCell>
                 <StyledCell align="left">Origin of Name</StyledCell>
-                {distance ? (
+                {units==="kilometers" ? (
                   <StyledCell align="left">Radius in Kilometers</StyledCell>
                 ) : (
                   <StyledCell align="left">Radius in Miles</StyledCell>
@@ -74,7 +74,7 @@ const Moons = (props) => {
                       </Tooltip>
                     </StyledCell>
                     <StyledCell>{moon.history}</StyledCell>
-                    {distance ? (
+                    {units="kilometers" ? (
                       <StyledCell>{radiusKm}</StyledCell>
                     ) : (
                       <StyledCell>{moon.radiusInMiles}</StyledCell>
@@ -87,7 +87,7 @@ const Moons = (props) => {
         </AccordionDetails>
       </StyledAccordion>
       <p>*Some moon radii may vary depending on moon shape*</p>
-    </Grid>
+    </div>
   );
 };
 
