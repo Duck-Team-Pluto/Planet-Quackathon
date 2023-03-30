@@ -25,6 +25,7 @@ const Planet = () => {
   return (
     <div key={planet.id}>
       <SinglePlanetImage radius={planet.radiusInMiles}></SinglePlanetImage>
+
       {
         planet && planet.name ?
         <PlanetInfo planet={planet}></PlanetInfo>
@@ -38,22 +39,24 @@ const Planet = () => {
 
 
       <div className="planet-scroll">
-
         <a
           onClick={() => {
             window.location.href = `/planets/${prev}`;
-          }}>
+          }}
+        >
           Previous Planet!
         </a>
+      </div>
+      <div className="planet-next">
         <a
           onClick={() => {
             window.location.href = `/planets/${next}`;
-          }}>
+          }}
+        >
           Next Planet!
         </a>
       </div>
     </div>
-
   );
 };
 
