@@ -8,6 +8,7 @@ position: relative;
 flex-direction: row;
 border: ${(props) => props.border ? `1px solid rgba(150, 150, 150, 0.5)` : null };
 border-radius: 5vh;
+margin: 1vh;
 `
 export const ColumnContainer = styled.div`
 display: flex;

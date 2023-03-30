@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchPlanetAsync } from "./singlePlanetSlice";
@@ -21,22 +21,30 @@ const Planet = () => {
     dispatch(fetchPlanetAsync(id));
   }, [dispatch, id]);
 
-  let radiusNum = +planet.radiusInMiles;
-  let distanceNum = +planet.distanceInMiles;
-  distanceNum = distanceNum.toLocaleString("en-US");
-  radiusNum = radiusNum.toLocaleString("en-US");
+  const [units, setUnits] = useState('miles');
+
+  const handleChange = (e) => {
+    setUnits(e.target.checked ? 'kilometers' : 'miles')
+    console.log(e.target.checked);
+  };
+
   return (
     <div key={planet.id}>
     <RowContainer className="previous-and-next-buttons">
       <SpaceLink to={`/planets/${prev}`} text='Previous Planet!'/>
+      <ColumnContainer className ="units-toggle" border={false}><label className="switch">
+        <input type="checkbox" name="units" onClick={handleChange} />
+        <span className="slider"></span>
+      </label>Units: {units==='miles' ? 'Miles' : 'Km'}</ColumnContainer>
       <SpaceLink to={`/planets/${next}`} text='Next Planet!'/>
+
     </RowContainer>
     <RowContainer className="single-planet-main-container">
 
 
       {
         planet && planet.name ?
-        <PlanetInfo planet={planet}></PlanetInfo>
+        <PlanetInfo planet={planet} units={units}></PlanetInfo>
         : null
       }
       <ColumnContainer>
@@ -45,7 +53,7 @@ const Planet = () => {
         </SinglePlanetImageContainer>
       {
         planet.moons && planet.moons.length
-        ? <Moons planetName={planet.name} moons={planet.moons}></Moons>
+        ? <Moons planetName={planet.name} moons={planet.moons} units={units}></Moons>
         : null
       }
       </ColumnContainer>

@@ -36,24 +36,11 @@ const StyledAccordion = styled(Accordion)`
 const Moons = (props) => {
   const moons = props.moons;
   const planetName = props.planetName;
-  const [distance, setDistance] = useState(false);
-
-  const handleChange = (e) => {
-    setDistance(e.target.checked);
-    console.log(e.target.checked);
-  };
+  const distance = props.distance;
   console.log(moons);
 
   return (
     <Grid mb="30px">
-      <label className="switch">
-        <input type="checkbox" name="distance" onClick={handleChange} />
-
-        <span className="slider"></span>
-      </label>
-
-      {distance ? <p>Switch to miles</p> : <p>Switch to kilometers</p>}
-      <h1>{planetName}</h1>
       <StyledAccordion>
         <AccordionSummary sx={{ color: "#ccc" }}>
           Click to see {planetName}'s Moons:
