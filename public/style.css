@@ -108,6 +108,7 @@ form div {
   cursor: pointer;
   padding: 1rem;
   margin-right: 1rem;
+  margin-bottom: 1rem;
 }
 
 .planet-scroll a:hover, .moon-scroll a:hover, .moon-next a:hover, .planet-next a:hover {
@@ -118,7 +119,7 @@ form div {
   display: inline-block;
   width: 60px;
   height: 34px;
-  margin-top: 40px;
+  margin-bottom: 40px;
 }
 .switch input {
   opacity: 0;
