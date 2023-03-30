@@ -33,7 +33,7 @@ const Planet = () => {
       {
         planet.moons && planet.moons.length
         ? <Moons planetName={planet.name} moons={planet.moons}></Moons>
-        : "This planet has no moons!"
+        : null
       }
 
 
