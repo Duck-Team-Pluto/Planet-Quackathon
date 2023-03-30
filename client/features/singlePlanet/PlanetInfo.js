@@ -17,7 +17,7 @@ const PlanetInfo = (props) => {
     console.log(e.target.checked);
   };
   return (
-    <ColumnContainer className="single-planet-info">
+    <ColumnContainer border={true} className="single-planet-info">
       <label className="switch">
         <input type="checkbox" name="distance" onClick={handleChange} />
 
