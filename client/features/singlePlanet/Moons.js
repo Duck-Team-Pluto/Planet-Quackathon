@@ -74,7 +74,7 @@ const Moons = (props) => {
                       </Tooltip>
                     </StyledCell>
                     <StyledCell>{moon.history}</StyledCell>
-                    {units="kilometers" ? (
+                    {units==="kilometers" ? (
                       <StyledCell>{radiusKm}</StyledCell>
                     ) : (
                       <StyledCell>{moon.radiusInMiles}</StyledCell>
@@ -87,7 +87,7 @@ const Moons = (props) => {
         </AccordionDetails>
       </StyledAccordion>
       <p>*Some moon radii may vary depending on moon shape*</p>
-    </div>
+    </Grid>
   );
 };
 
