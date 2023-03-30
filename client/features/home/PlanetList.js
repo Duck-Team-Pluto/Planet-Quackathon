@@ -12,8 +12,8 @@ const PlanetList = (props) => {
 {planets.map((planet)=> {
 
 return(
-  <PlanetListItem>
-    <Link key={planet.id} to={`/planets/${planet.id}`}><SimplePlanetImage margin={-37.5} radius={planet.radiusInMiles}></SimplePlanetImage></Link><SpaceLink to={`/planets/${planet.id}`} text={planet.name}/></PlanetListItem>
+  <PlanetListItem key={planet.id}>
+    <Link to={`/planets/${planet.id}`}><SimplePlanetImage margin={-37.5} radius={planet.radiusInMiles}></SimplePlanetImage></Link><SpaceLink to={`/planets/${planet.id}`} text={planet.name}/></PlanetListItem>
     )})}
     </PlanetListContainer>
   );
