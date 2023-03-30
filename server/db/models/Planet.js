@@ -22,17 +22,17 @@ const Planet = db.define("planet", {
   mass: {
     //kg
     type: Sequelize.DECIMAL,
-    // allowNull: false,
+    allowNull: false,
   },
   orbitCirc: {
     //miles
     type: Sequelize.DECIMAL,
-    //allowNull: false,
+    allowNull: false,
   },
   orbitEcc: {
     //miles
     type: Sequelize.DECIMAL,
-    // allowNull: false,
+    allowNull: false,
   },
   factOne: {
     type: Sequelize.TEXT,
@@ -46,9 +46,9 @@ const Planet = db.define("planet", {
     type: Sequelize.TEXT,
     allowNull: false,
   },
-  core: {
+  planetType: {
     type: Sequelize.ENUM,
-    values: ["Solid", "Gas"],
+    values: ["Solid", "Gas Giant", "Ice Giant", "Dwarf"],
   },
 });
 

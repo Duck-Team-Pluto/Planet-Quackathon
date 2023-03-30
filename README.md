@@ -2,6 +2,12 @@
 
 Planet Quackathon is an educational website that teaches people about the solar system.
 
+This website is a part of the Dear Junior Dev Quackathon to create an educational SPA about the solar system. However, the visual representation of the planet must be made out of CSS. No images, assets, emojis, or SVGs are permitted.
+
+The planets and solar system were made using Styled Components, which allowed us to write the CSS in a Javascript file, and import it directly to the component it was used in.
+
+Each planet page includes the name, radius, distance from the sun, planet type, and 3 fun facts. It also features a table with the list of the planet's moons, if there are any.
+
 ## Set up and run the project
 
 1. Create a PostgreSQL database with the name `quackathon`
@@ -28,6 +34,7 @@ Planet Quackathon is an educational website that teaches people about the solar 
 - Sequelize
 - Express
 - Node.js
+- Styled Components
 
 ### Sources
 

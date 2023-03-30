@@ -10,7 +10,7 @@ const planets = [
     factTwo: "It is the smallest of the non dwarf planets in our solar system.",
     factThree:
       "Due to solar radiation and extreme temperatures, it is very unlikely that life could survive on the planet.",
-    core: "Solid",
+    planetType: "Solid",
     id: 1,
   },
   {
@@ -26,7 +26,7 @@ const planets = [
       "Even though Mercury is closer to the Sun, Venus is the hottest planet in our solar system.",
     factThree:
       "Its thick atmosphere is full of the greenhouse gas carbon dioxide, and it has clouds of sulfuric acid.",
-    core: "Solid",
+    planetType: "Solid",
     id: 2,
   },
   {
@@ -40,7 +40,7 @@ const planets = [
     factTwo: "Earth rotates at around 1000 miles an hour",
     factThree:
       "The planet's surface is bumpy, and water flow, ice drift and the movement of the tectonic plates beneath Earth's crust all change the pull of gravity over the surface.",
-    core: "Solid",
+    planetType: "Solid",
     id: 3,
   },
   {
@@ -54,7 +54,7 @@ const planets = [
     factTwo: "A day on Mars lasts 24 hours and 37 minutes.",
     factThree:
       "Mars is home to Olympus Mons, a dormant volcano and the largest volcano and highest mountain in our solar system. It is 16 miles high and 600 km across the base, making it 3x the height of Mount Everest.",
-    core: "Solid",
+    planetType: "Solid",
     id: 4,
   },
   {
@@ -69,7 +69,7 @@ const planets = [
       "It's similar to a star, but it never got big enough to start burning.",
     factThree:
       "It has big storms like the Great Red Spot, which has been going for hundreds of years.",
-    core: "Solid",
+    planetType: "Gas Giant",
     id: 5,
   },
   {
@@ -83,7 +83,7 @@ const planets = [
     factTwo:
       "Its beautiful rings are not solid. They are made up of bits of ice, dust and rock.",
     factThree: "This planet is named after the Roman god of farming.",
-    core: "Gas",
+    planetType: "Gas Giant",
     id: 6,
   },
   {
@@ -97,7 +97,7 @@ const planets = [
       "It was the first planet found with the aid of a telescope, Uranus was discovered in 1781 by astronomer William Herschel.",
     factTwo: "Uranus is surrounded by a set of 13 rings.",
     factThree: "Uranus is the only planet that spins on its side.",
-    core: "Solid",
+    planetType: "Ice Giant",
     id: 7,
   },
   {
@@ -112,8 +112,8 @@ const planets = [
     factTwo:
       "In 2011 Neptune completed its first 165-year orbit since its discovery in 1846.",
     factThree:
-      "Neptune is an ice giant. Its made up of dense icy materials, mainly water, methane and ammonia, above a small rocky core.",
-    core: "Solid",
+      "Neptune is an ice giant. Its made up of dense icy materials, mainly water, methane and ammonia, above a small rocky planetType.",
+    planetType: "Ice Giant",
     id: 8,
   },
   {
@@ -128,7 +128,7 @@ const planets = [
     factTwo: "A year on Pluto is 248 Earth years.",
     factThree:
       "Pluto is the only place other than Earth in our solar system that has white-peaked mountains, but these white caps arent made of snow. Instead, theyre made of methane frost.",
-    core: "Solid",
+    planetType: "Dwarf",
     id: 9,
   },
 ];
