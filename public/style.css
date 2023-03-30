@@ -6,7 +6,7 @@ html {
   height: 100%;
   background: black;
   padding: 0;
-  margin: 0;
+  margin: 1vh 2vh 1vh 1vh;
 }
 /*::-webkit-scrollbar {
   width: 0px;
@@ -35,19 +35,9 @@ label {
 }
 
 nav a {
-  position: absolute;
+  position: relative;
   top: 2%;
   left: 2%;
-  text-decoration: none;
-  color: #ddd;
-  border: solid 1px rgba(150, 150, 150, 0.5);
-  border-radius: 1rem;
-  cursor: pointer;
-  padding: 1rem;
-}
-
-nav a:hover {
-  box-shadow: 0 0 1px 1px #ccc;
 }
 
 form div {
@@ -90,30 +80,6 @@ form div {
   transform-style: preserve-3d;
 }
 
-.moon-next, .planet-next {
-  position: absolute;
-  left: 90%;
-  top: 4%;
-}
-
-.planet-scroll, .moon-scroll {
-  position: absolute;
-  left: 8%;
-  top: 4%;
-}
-
-.planet-scroll a, .moon-scroll a, .moon-next a, .planet-next a {
-  border: solid 1px rgba(150, 150, 150, 0.5);
-  border-radius: 1rem;
-  cursor: pointer;
-  padding: 1rem;
-  margin-right: 1rem;
-  margin-bottom: 1rem;
-}
-
-.planet-scroll a:hover, .moon-scroll a:hover, .moon-next a:hover, .planet-next a:hover {
-  box-shadow: 0 0 1px 1px #ccc;
-}
 .switch {
   position: relative;
   display: inline-block;

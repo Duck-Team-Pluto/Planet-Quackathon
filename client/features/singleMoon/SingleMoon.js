@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { selectMoon, fetchMoonAsync } from "./singleMoonSlice";
+import { RowContainer } from "../../styled-components/Containers";
+import SpaceLink from "../../styled-components/SpaceLink";
 
 const Moon = () => {
   const dispatch = useDispatch();
@@ -17,24 +19,10 @@ const Moon = () => {
   }, [dispatch]);
   return (
     <div key={moon.id}>
-      <div className="moon-scroll">
-        <a
-          onClick={() => {
-            window.location.href = `/moons/${prev}`;
-          }}
-        >
-          Previous Moon!
-        </a>
-      </div>
-      <div className="moon-next">
-        <a
-          onClick={() => {
-            window.location.href = `/moons/${next}`;
-          }}
-        >
-          Next Moon!
-        </a>
-      </div>
+      <RowContainer className="previous-and-next-buttons">
+      <SpaceLink to={`/planets/${prev}`} text='Previous Planet!'/>
+      <SpaceLink to={`/planets/${next}`} text='Next Planet!'/>
+    </RowContainer>
       <div className="single-planet">
         <h1>{moon.name}</h1>
         <div>

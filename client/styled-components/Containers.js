@@ -3,14 +3,14 @@ import styled from "styled-components";
 export const RowContainer = styled.div`
 display: flex;
 align-items: center;
-justify-content: space-around;
+justify-content: space-between;
 position: relative;
 flex-direction: row;
 `
 export const ColumnContainer = styled.div`
 display: flex;
 align-items: center;
-justify-content: space-around;
+justify-content: space-between;
 position: relative;
 flex-direction: column;
 `
