@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 const Moons = (props) => {
   const moons = props.moons;
   const planetName = props.planetName;
@@ -35,7 +37,7 @@ const Moons = (props) => {
         </thead>
       </table>
 
-      {/* {moons.map((moon) => {
+      {moons.map((moon) => {
         let num = +moon.radiusInMiles;
         let radiusKm = (num * 1.609344).toFixed(3);
 
@@ -44,7 +46,9 @@ const Moons = (props) => {
             <table>
               <tbody>
                 <tr>
-                  <th>{moon.name}</th>
+                  <th>
+                    <Link to={`/moons/${moon.id}`}>{moon.name}</Link>
+                  </th>
                   <th>{moon.history}</th>
                   {distance ? (
                     <th>{radiusKm}</th>
@@ -56,7 +60,7 @@ const Moons = (props) => {
             </table>
           </div>
         );
-      })} */}
+      })}
 
       <p>*Some moon radii may vary depending on moon shape*</p>
     </div>
