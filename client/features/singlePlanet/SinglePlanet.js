@@ -5,6 +5,7 @@ import { fetchPlanetAsync } from "./singlePlanetSlice";
 import { SinglePlanetImage } from "../../styled-components/PlanetDisplays";
 import Moons from "./Moons";
 import PlanetInfo from "./PlanetInfo";
+import { ColumnContainer, RowContainer, SinglePlanetImageContainer } from "../../styled-components/Containers";
 
 const Planet = () => {
   const dispatch = useDispatch();
@@ -24,19 +25,25 @@ const Planet = () => {
   radiusNum = radiusNum.toLocaleString("en-US");
   return (
     <div key={planet.id}>
-      <SinglePlanetImage radius={planet.radiusInMiles}></SinglePlanetImage>
+    <RowContainer>
+
 
       {
         planet && planet.name ?
         <PlanetInfo planet={planet}></PlanetInfo>
         : null
       }
+      <ColumnContainer>
+        <SinglePlanetImageContainer>
+          <SinglePlanetImage radius={planet.radiusInMiles}></SinglePlanetImage>
+        </SinglePlanetImageContainer>
       {
         planet.moons && planet.moons.length
         ? <Moons planetName={planet.name} moons={planet.moons}></Moons>
         : null
       }
-
+      </ColumnContainer>
+</RowContainer>
 
       <div className="planet-scroll">
         <a
@@ -56,6 +63,7 @@ const Planet = () => {
           Next Planet!
         </a>
       </div>
+
     </div>
   );
 };

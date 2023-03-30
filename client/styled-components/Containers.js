@@ -1,5 +1,23 @@
 import styled from "styled-components";
 
+export const RowContainer = styled.div`
+display: flex;
+align-items: center;
+justify-content: space-around;
+position: relative;
+flex-direction: row;
+`
+export const ColumnContainer = styled.div`
+display: flex;
+align-items: center;
+justify-content: space-around;
+position: relative;
+flex-direction: column;
+`
+
+export const SinglePlanetImageContainer = styled.div`
+position: relative;`
+
 export const PlanetListContainer = styled.div`
   position: relative;
   margin-top: 80vh;

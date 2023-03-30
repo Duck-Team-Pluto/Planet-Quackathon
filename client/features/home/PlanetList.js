@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SpaceLink from "../../styled-components/SpaceLink";
 import { SimplePlanetImage } from "../../styled-components/PlanetDisplays";
-import { PlanetListContainer, PlanetListItem } from "../../styled-components/PlanetListContainer";
+import { PlanetListContainer, PlanetListItem } from "../../styled-components/Containers";
 
 
 const PlanetList = (props) => {

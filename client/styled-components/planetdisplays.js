@@ -8,21 +8,30 @@ const planetRotate = keyframes`
 
 export const SinglePlanetImage = styled.div`
   position: absolute;
-  top: 50%;
-  left: 50%;
   border-radius: 50%;
-  height: ${(props) => `${(props.radius ** .25)*5}vh`};
-  width: ${(props) => `${(props.radius ** .25)*5}vh`};
+  height: ${(props) => `${(props.radius ** .25)*4}vh`};
+  width: ${(props) => `${(props.radius ** .25)*4}vh`};
   background: radial-gradient(circle at -100%, rgba(100, 60, 200, 1), rgba(180, 120, 255, 1));
   background-size: cover;
-  box-shadow: inset -50px -20px 90px 20px rgba(0, 0, 0, .75), 0px 0px 20px 6px rgba(255, 255, 255, .25);
+  box-shadow: ${(props) => `
+    inset
+      ${(props.radius ** .25)/5}vh
+      ${(props.radius ** .25)/2}vh
+      ${(props.radius ** .25)}vh
+      ${(props.radius ** .25)/5}vh
+      rgba(0, 0, 0, .75),
+      0
+      0
+      ${(props.radius ** .25)/10}vh
+      ${(props.radius ** .25)/20}vh
+      rgba(255, 255, 255, .25)`};
   animation-name: ${planetRotate};
   animation-duration: 20s;
   animation-delay: 0s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  z-index: -1;
-  transform-style: preserve-3d;
+  z-index: 2;
+
 `
 
 export const SimplePlanetImage = styled.div`
@@ -34,18 +43,7 @@ export const SimplePlanetImage = styled.div`
   border-radius: 50%;
   background: radial-gradient(circle at -100%, rgba(100, 60, 200, 1), rgba(180, 120, 255, 1));
   background-size: cover;
-  box-shadow: ${(props) => `
-    inset
-      ${(props.radius ** .25)/10}vh
-      ${(props.radius ** .25)/10}vh
-      ${(props.radius ** .25)/5}vh
-      ${(props.radius ** .25)/20}vh
-      rgba(0, 0, 0, .75),
-      0
-      0
-      ${(props.radius ** .25)/10}vh
-      ${(props.radius ** .25)/20}vh
-      rgba(255, 255, 255, .25)`};
+
   color: #ccc;
 }
 
