@@ -61,8 +61,12 @@ const Planet = () => {
         ? (+planet.distanceInMiles).toLocaleString("en-US")
         : (+planet.distanceInMiles * toKilometers).toLocaleString("en-US")
     )
-    setDisplayedComponent(SinglePlanetDisplays.funFacts);
+
   }, [dispatch, id, units, planet.name]);
+
+  useEffect(()=>{
+    setDisplayedComponent(SinglePlanetDisplays.funFacts);
+  },[planet.name])
 
   return (
     <div key={planet.id}>

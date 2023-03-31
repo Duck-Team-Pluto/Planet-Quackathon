@@ -1,5 +1,5 @@
 import React from "react";
-import { RowContainer, ColumnContainer } from "../../styled-components/Containers";
+import { ColumnContainer } from "../../styled-components/Containers";
 
 
 
