@@ -5,49 +5,14 @@ import {
 } from "../styled-components/starbackground";
 import Navbar from "../features/navbar/Navbar";
 import AppRoutes from "./AppRoutes";
+import AppBackground from "./AppBackground";
 
 const App = () => {
   return (
     <div id='main'>
       <AppRoutes />
-      <AppBackground />
       <Navbar />
-
-      {/* StarBackground shows best in layers with slightly different values
-      values:
-      time: String, seconds to complete rotation
-      density: Number, number of stars in the layer
-      blur: Number from .25 to 3.0 works best. blur radius of stars
-      size: Number from 0.1 to 1.0 works best, pixel size of stars
-      */}
-
-      <StarBackground
-        time='600s'
-        density={350}
-        blur={1}
-        size={0.125}
-      ></StarBackground>
-      <StarBackground
-        time='700s'
-        density={200}
-        blur={1}
-        size={0.25}
-      ></StarBackground>
-      <StarBackground
-        time='450s'
-        density={100}
-        blur={1.5}
-        size={0.5}
-      ></StarBackground>
-      <StarBackground
-        time='800s'
-        density={350}
-        blur={0.5}
-        size={0.125}
-      ></StarBackground>
-
-      {/* TwinkleStars does not take values from props, but can be modified in styled-components/starbackground.js */}
-      <TwinkleStars></TwinkleStars>
+      <AppBackground />
     </div>
   );
 };
