@@ -8,12 +8,11 @@ const PlanetInfo = (props) => {
 
   return (
 
-      <ColumnContainer width='30vw' margin="0 0 0 2vw">
+      <ColumnContainer width='30vw' margin="0 0 0 2vw" align='left'>
         <h1>{planet.name}</h1>
         <h2>
           Radius {units === "miles" ? "(Miles)" : "(Km)"} {radius}
         </h2>
-
         <h2>
           Distance from the Sun {units === "miles" ? "(Miles)" : "(Km)"}{" "}
           {distance}
