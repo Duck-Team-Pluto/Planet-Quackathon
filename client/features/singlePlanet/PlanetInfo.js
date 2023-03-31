@@ -1,19 +1,23 @@
-import React, { useEffect, useState } from "react";
-import { ColumnContainer } from "../../styled-components/Containers";
+import React from "react";
+
 
 
 const PlanetInfo = (props) => {
-  const planet = props.planet;
-  const units = props.units;
+ const { radius, distance, units, planet } = props;
 
   return (
     <>
-      <h2>Fun Facts!!!</h2>
-      <div className="fun-facts">
-        <h3>{planet.factOne}</h3>
-        <h3>{planet.factTwo}</h3>
-        <h3>{planet.factThree}</h3>
-      </div>
+
+    <h1>{planet.name}</h1>
+        <h2>
+          Radius {units === "miles" ? "(Miles)" : "(Km)"} {radius}
+        </h2>
+        <h2>
+          Distance from the Sun {units === "miles" ? "(Miles)" : "(Km)"}{" "}
+          {distance}
+        </h2>
+        <h2>Planet Type: {planet.planetType}</h2>
+
       </>
   );
 };

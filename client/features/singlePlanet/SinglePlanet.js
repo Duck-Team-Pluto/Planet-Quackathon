@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { fetchPlanetAsync } from "./singlePlanetSlice";
 import Moons from "./Moons";
 import PlanetInfo from "./PlanetInfo";
+import FunFacts from "./FunFacts";
 import SinglePlanetImageDisplay from "./SinglePlanetImageDisplay";
 import {
   ColumnContainer,
@@ -18,7 +19,7 @@ const Planet = () => {
   console.log(planet)
 
   const SinglePlanetDisplays = {
-    funFacts: <PlanetInfo planet={planet} units={units} />,
+    funFacts: <FunFacts planet={planet} units={units} />,
     moonInfo: <Moons planet={planet} />,
   };
 
@@ -77,15 +78,7 @@ const Planet = () => {
         <SpaceLink to={`/planets/${next}`} text="Next Planet!" />
       </RowContainer>
       <RowContainer className="single-planet-info">
-        <h1>{planet.name}</h1>
-        <h2>
-          Radius {units === "miles" ? "(Miles)" : "(Km)"} {radius}
-        </h2>
-        <h2>
-          Distance from the Sun {units === "miles" ? "(Miles)" : "(Km)"}{" "}
-          {distance}
-        </h2>
-        <h2>Planet Type: {planet.planetType}</h2>
+        <PlanetInfo planet={planet} units={units} radius={radius} distance={distance} />
       </RowContainer>
       <ColumnContainer className="single-planet-main-container">
         <RowContainer className="display-options">
