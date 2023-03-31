@@ -6,12 +6,18 @@ import {
 import Navbar from "../features/navbar/Navbar";
 import AppRoutes from "./AppRoutes";
 import AppBackground from "./AppBackground";
+import { RowContainer } from "../styled-components/Containers";
 
 const App = () => {
   return (
     <div id='main'>
-      <AppRoutes />
-      <Navbar />
+      <RowContainer>
+        <AppRoutes />
+      </RowContainer>
+
+      <RowContainer>
+        <Navbar />
+      </RowContainer>
       <AppBackground />
     </div>
   );
