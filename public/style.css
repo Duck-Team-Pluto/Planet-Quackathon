@@ -58,6 +58,12 @@ h1 {
   text-align: center;
 }
 
+h3 {
+  font-family: "Space Mono", monospace;
+  margin: auto;
+  text-align: center;
+}
+
 .navButton {
   display: flex;
   flex-direction: row;
