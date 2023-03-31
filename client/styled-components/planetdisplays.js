@@ -23,7 +23,7 @@ color = +color;
 const nums = [124, 9, 2, 1];
 const nums2 = [137, 63, 69, 1];
 let one = nums[0];
-console.log("maybe?");
+//console.log("maybe?");
 
 export const SinglePlanetImage = styled.div`
   position: absolute;

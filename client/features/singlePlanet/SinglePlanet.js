@@ -15,6 +15,7 @@ const Planet = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const planet = useSelector((state) => state.planet);
+  console.log(planet)
 
   const SinglePlanetDisplays = {
     funFacts: <PlanetInfo planet={planet} units={units} />,
@@ -26,9 +27,7 @@ const Planet = () => {
   if (next > 9) next = 1;
   if (prev < 1) prev = 9;
 
-  useEffect(() => {
-    dispatch(fetchPlanetAsync(id));
-  }, [dispatch, id]);
+
 
   const [units, setUnits] = useState("miles");
   const [displayedComponent, setDisplayedComponent] = useState(
@@ -38,18 +37,7 @@ const Planet = () => {
   const [distance, setDistance] = useState(planet.distanceInMiles);
   const toKilometers = 1.609344;
 
-  useEffect(() => {
-    setRadius(
-      units === "miles"
-        ? (+planet.radiusInMiles).toLocaleString("en-US")
-        : (+planet.radiusInMiles * toKilometers).toLocaleString("en-US")
-    );
-    setDistance(
-      units === "miles"
-        ? (+planet.distanceInMiles).toLocaleString("en-US")
-        : (+planet.distanceInMiles * toKilometers).toLocaleString("en-US")
-    );
-  }, [dispatch, units, id]);
+
 
   const handleUnitChange = (e) => {
     setUnits(e.target.checked ? "kilometers" : "miles");
@@ -59,6 +47,21 @@ const Planet = () => {
   const handleDisplayedComponentChange = (e) => {
     setDisplayedComponent(SinglePlanetDisplays[e.target.value]);
   };
+
+  useEffect(() => {
+    dispatch(fetchPlanetAsync(id));
+    setRadius(
+      units === "miles"
+        ? (+planet.radiusInMiles).toLocaleString("en-US")
+        : (+planet.radiusInMiles * toKilometers).toLocaleString("en-US")
+    );
+    setDistance(
+      units === "miles"
+        ? (+planet.distanceInMiles).toLocaleString("en-US")
+        : (+planet.distanceInMiles * toKilometers).toLocaleString("en-US")
+    )
+    setDisplayedComponent(SinglePlanetDisplays.funFacts);
+  }, [dispatch, id, units, planet.name]);
 
   return (
     <div key={planet.id}>
