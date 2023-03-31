@@ -28,8 +28,8 @@ let one = nums[0];
 export const SinglePlanetImage = styled.div`
   position: absolute;
   border-radius: 50%;
-  height: ${(props) => `${props.radius ** 0.25 * 4}vh`};
-  width: ${(props) => `${props.radius ** 0.25 * 4}vh`};
+  height: ${(props) => `${props.radius ** 0.20 * 5}vh`};
+  width: ${(props) => `${props.radius ** 0.20 * 5}vh`};
   background: radial-gradient(
     circle at -100%,
     rgba(${(props) => `${props.colorOne}, 1 `}),
@@ -69,14 +69,25 @@ export const SimplePlanetImage = styled.div`
       rgba(${(props) => `${props.colorTwo}, 1 `})
     );
     background-size: cover;
-
+    box-shadow: ${(props) => `
+    inset
+      ${props.radius ** 0.25 / 20}vh
+      ${props.radius ** 0.25 / 10}vh
+      ${props.radius ** 0.25 / 6}vh
+      ${props.radius ** 0.25 / 25}vh
+      rgba(0, 0, 0, .75),
+      0
+      0
+      ${props.radius ** 0.25 / 10}vh
+      ${props.radius ** 0.25 / 20}vh
+      rgba(255, 255, 255, .25)`};
     color: #ccc;
   }
 
   &:hover {
     height: ${(props) => `${props.radius ** 0.25 / 1.8}vh`};
     width: ${(props) => `${props.radius ** 0.25 / 1.8}vh`};
-    transition: ease-in-out 0.25s;
+    transition: ease-in-out 0.2s;
   }
 `;
 

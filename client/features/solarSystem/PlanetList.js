@@ -10,7 +10,7 @@ import {
 const PlanetList = (props) => {
   const planets = props.planets;
   return (
-    <RowContainer className="planet-list">
+    <>
       {planets.map((planet) => {
         return (
           <ColumnContainer
@@ -28,7 +28,7 @@ const PlanetList = (props) => {
           </ColumnContainer>
         );
       })}
-    </RowContainer>
+      </>
   );
 };
 

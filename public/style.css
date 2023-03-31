@@ -122,21 +122,6 @@ form div {
   display: inline-block;
 }
 
-.galaxy {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-}
-.solar-system-orbit {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-}
-
 .switch {
   position: relative;
   display: inline-block;

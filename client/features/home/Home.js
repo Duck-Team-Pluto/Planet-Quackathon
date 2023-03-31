@@ -8,7 +8,7 @@ import { ColumnContainer, RowContainer } from "../../styled-components/Container
 const Home = () => {
   return (
     <div className="home">
-      <RowContainer>
+      <RowContainer width="100vw">
         <SolarSystem></SolarSystem>
       </RowContainer>
       <RowContainer>
