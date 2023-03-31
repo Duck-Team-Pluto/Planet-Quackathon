@@ -6,8 +6,6 @@ const PlanetInfo = (props) => {
   const planet = props.planet;
   const units = props.units;
 
-
-
   return (
     <>
       <h2>Fun Facts!!!</h2>

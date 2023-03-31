@@ -22,7 +22,6 @@ const Planet = () => {
   const SinglePlanetDisplays = {
     funFacts: <PlanetInfo planet={planet} units={units}/>,
       moonInfo: <Moons planet={planet}/>,
-      planetImage: <SinglePlanetImageDisplay planet={planet}/>
   }
 
   let next = +id + 1;
@@ -35,7 +34,7 @@ const Planet = () => {
   }, [dispatch, id]);
 
   const [units, setUnits] = useState('miles');
-  const [displayedComponent, setDisplayedComponent] = useState('')
+  const [displayedComponent, setDisplayedComponent] = useState(SinglePlanetDisplays.funFacts)
   const [radius, setRadius] = useState(+planet.radiusInMiles)
   const[distance, setDistance] = useState(+planet.distanceInMiles)
   const toKilometers = 1.61;
@@ -67,14 +66,6 @@ const Planet = () => {
           </label>
           Units: {units === "miles" ? "Miles" : "Km"}
         </ColumnContainer>
-        <ColumnContainer className="display-options">
-          <input type="radio" id="fun-facts" name="displayedComponent" value="funFacts" onClick={handleDisplayedComponentChange} />
-          <label htmlFor="fun-facts">Fun Facts</label>
-          <input type="radio" id="planet-image" name="displayedComponent" value="planetImage" onClick={handleDisplayedComponentChange} />
-          <label htmlFor="planet-image">Planet Image</label>
-          <input type="radio" id="moon-info" name="displayedComponent" value="moonInfo" onClick={handleDisplayedComponentChange} />
-          <label htmlFor="moon-info">Moon Info</label>
-        </ColumnContainer>
         <SpaceLink to={`/planets/${next}`} text="Next Planet!" />
       </RowContainer>
       <RowContainer className="single-planet-info">
@@ -83,14 +74,22 @@ const Planet = () => {
         <h2>Distance from the Sun {units==='miles' ? '(Miles)' : '(Km)'} {distance}</h2>
         <h2>Planet Type: {planet.planetType}</h2>
       </RowContainer>
-      <RowContainer className="single-planet-main-container">
-
-        <ColumnContainer className="single-planet-display-container">
-          {planet && planet.name ? displayedComponent : null}
-
-        </ColumnContainer>
-
+      <ColumnContainer className="single-planet-main-container">
+      <RowContainer className="display-options">
+          <input type="radio" id="fun-facts" name="displayedComponent" value="funFacts" onClick={handleDisplayedComponentChange} />
+          <label htmlFor="fun-facts">Fun Facts</label>
+          <input type="radio" id="moon-info" name="displayedComponent" value="moonInfo" onClick={handleDisplayedComponentChange} />
+          <label htmlFor="moon-info">Moon Info</label>
       </RowContainer>
+      <RowContainer>
+        <ColumnContainer className="single-planet-info-display-container">
+          {planet && planet.name ? displayedComponent : null}
+        </ColumnContainer>
+        <ColumnContainer>
+          <SinglePlanetImageDisplay planet={planet}/>
+        </ColumnContainer>
+      </RowContainer>
+      </ColumnContainer>
     </div>
   );
 };
