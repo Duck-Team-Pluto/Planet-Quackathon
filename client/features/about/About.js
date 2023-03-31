@@ -8,11 +8,13 @@ const About = () => {
       <h1>About</h1>
       <p>{aboutProject}</p>
       <p>
-        <a href='https://github.com/Duck-Team-Pluto/Planet-Quackathon'>
+        <a
+          className="about-a"
+          href="https://github.com/Duck-Team-Pluto/Planet-Quackathon">
           Github Repository
         </a>
       </p>
-      <div className='team'>
+      <div className="team">
         {aboutTeam.map((person) => (
           <TeamMember key={person.name} person={person} />
         ))}

@@ -26,7 +26,7 @@ animation:
 /* The typing effect */
 @keyframes typing {
   from { width: 0 }
-  to { width: 100% }
+  to { width: 36.5% }
 }
 
 /* The typewriter cursor effect */
