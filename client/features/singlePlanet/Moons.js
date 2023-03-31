@@ -38,6 +38,8 @@ const Moons = (props) => {
   const moons = props.planet.moons;
   const planetName = props.planet.name;
   const units = props.units;
+  console.log(planetName);
+
 
 
   return (

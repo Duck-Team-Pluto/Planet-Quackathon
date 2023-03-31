@@ -66,6 +66,7 @@ const Planet = () => {
 
   return (
     <div key={planet.id}>
+
       <RowContainer className="previous-and-next-buttons">
         <SpaceLink to={`/planets/${prev}`} text="Previous Planet!" />
         <ColumnContainer className="units-toggle" border={false}>
@@ -77,10 +78,19 @@ const Planet = () => {
         </ColumnContainer>
         <SpaceLink to={`/planets/${next}`} text="Next Planet!" />
       </RowContainer>
-      <RowContainer className="single-planet-info">
-        <PlanetInfo planet={planet} units={units} radius={radius} distance={distance} />
-      </RowContainer>
-      <ColumnContainer className="single-planet-main-container">
+
+      <RowContainer className="single-planet-main-container">
+        <PlanetInfo
+          planet={planet}
+          units={units}
+          radius={radius}
+          distance={distance}
+          className="single-planet-info"
+        />
+
+      <SinglePlanetImageDisplay planet={planet} />
+
+      <ColumnContainer className="single-planet-info-display-container" margin="5vh 2vw 0 0">
         <RowContainer className="display-options">
           <input
             type="radio"
@@ -99,15 +109,12 @@ const Planet = () => {
           />
           <label htmlFor="moon-info">Moon Info</label>
         </RowContainer>
-        <RowContainer>
-          <ColumnContainer className="single-planet-info-display-container">
             {planet && planet.name ? displayedComponent : null}
-          </ColumnContainer>
-          <ColumnContainer>
-            <SinglePlanetImageDisplay planet={planet} />
-          </ColumnContainer>
-        </RowContainer>
       </ColumnContainer>
+
+
+
+    </RowContainer>
     </div>
   );
 };
