@@ -13,6 +13,7 @@ import {
   Grid,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { ColumnContainer } from "../../styled-components/Containers";
 
 
 const StyledCell = styled(TableCell)`
@@ -43,7 +44,7 @@ const Moons = (props) => {
 
 
   return (
-    <>
+    <ColumnContainer width="30vw">
       <Grid mb="30px">
         <StyledAccordion>
           <AccordionSummary sx={{ color: "#ccc" }}>
@@ -92,7 +93,7 @@ const Moons = (props) => {
         </StyledAccordion>
         <p>*Some moon radii may vary depending on moon shape*</p>
       </Grid>
-    </>
+    </ColumnContainer>
   );
 };
 
