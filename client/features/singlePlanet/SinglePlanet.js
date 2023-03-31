@@ -11,18 +11,15 @@ import {
 } from "../../styled-components/Containers";
 import SpaceLink from "../../styled-components/SpaceLink";
 
-
-
 const Planet = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const planet = useSelector((state) => state.planet);
 
-
   const SinglePlanetDisplays = {
-    funFacts: <PlanetInfo planet={planet} units={units}/>,
-      moonInfo: <Moons planet={planet}/>,
-  }
+    funFacts: <PlanetInfo planet={planet} units={units} />,
+    moonInfo: <Moons planet={planet} />,
+  };
 
   let next = +id + 1;
   let prev = +id - 1;
@@ -33,17 +30,26 @@ const Planet = () => {
     dispatch(fetchPlanetAsync(id));
   }, [dispatch, id]);
 
-  const [units, setUnits] = useState('miles');
-  const [displayedComponent, setDisplayedComponent] = useState(SinglePlanetDisplays.funFacts)
-  const [radius, setRadius] = useState(+planet.radiusInMiles)
-  const[distance, setDistance] = useState(+planet.distanceInMiles)
-  const toKilometers = 1.61;
+  const [units, setUnits] = useState("miles");
+  const [displayedComponent, setDisplayedComponent] = useState(
+    SinglePlanetDisplays.funFacts
+  );
+  const [radius, setRadius] = useState(planet.radiusInMiles);
+  const [distance, setDistance] = useState(planet.distanceInMiles);
+  const toKilometers = 1.609344;
 
-  useEffect(()=>{
-    setRadius(units==='miles' ? +planet.radiusInMiles : (+planet.radiusInMiles)*toKilometers)
-    setDistance(units==='miles' ? +planet.distanceInMiles : (+planet.distanceInMiles)*toKilometers)
-  }, [dispatch, units, id])
-
+  useEffect(() => {
+    setRadius(
+      units === "miles"
+        ? (+planet.radiusInMiles).toLocaleString("en-US")
+        : (+planet.radiusInMiles * toKilometers).toLocaleString("en-US")
+    );
+    setDistance(
+      units === "miles"
+        ? (+planet.distanceInMiles).toLocaleString("en-US")
+        : (+planet.distanceInMiles * toKilometers).toLocaleString("en-US")
+    );
+  }, [dispatch, units, id]);
 
   const handleUnitChange = (e) => {
     setUnits(e.target.checked ? "kilometers" : "miles");
@@ -51,9 +57,8 @@ const Planet = () => {
   };
 
   const handleDisplayedComponentChange = (e) => {
-    setDisplayedComponent(SinglePlanetDisplays[e.target.value])
-  }
-
+    setDisplayedComponent(SinglePlanetDisplays[e.target.value]);
+  };
 
   return (
     <div key={planet.id}>
@@ -70,25 +75,42 @@ const Planet = () => {
       </RowContainer>
       <RowContainer className="single-planet-info">
         <h1>{planet.name}</h1>
-        <h2>Radius {units==='miles' ? '(Miles)' : '(Km)'} {radius}</h2>
-        <h2>Distance from the Sun {units==='miles' ? '(Miles)' : '(Km)'} {distance}</h2>
+        <h2>
+          Radius {units === "miles" ? "(Miles)" : "(Km)"} {radius}
+        </h2>
+        <h2>
+          Distance from the Sun {units === "miles" ? "(Miles)" : "(Km)"}{" "}
+          {distance}
+        </h2>
         <h2>Planet Type: {planet.planetType}</h2>
       </RowContainer>
       <ColumnContainer className="single-planet-main-container">
-      <RowContainer className="display-options">
-          <input type="radio" id="fun-facts" name="displayedComponent" value="funFacts" onClick={handleDisplayedComponentChange} />
+        <RowContainer className="display-options">
+          <input
+            type="radio"
+            id="fun-facts"
+            name="displayedComponent"
+            value="funFacts"
+            onClick={handleDisplayedComponentChange}
+          />
           <label htmlFor="fun-facts">Fun Facts</label>
-          <input type="radio" id="moon-info" name="displayedComponent" value="moonInfo" onClick={handleDisplayedComponentChange} />
+          <input
+            type="radio"
+            id="moon-info"
+            name="displayedComponent"
+            value="moonInfo"
+            onClick={handleDisplayedComponentChange}
+          />
           <label htmlFor="moon-info">Moon Info</label>
-      </RowContainer>
-      <RowContainer>
-        <ColumnContainer className="single-planet-info-display-container">
-          {planet && planet.name ? displayedComponent : null}
-        </ColumnContainer>
-        <ColumnContainer>
-          <SinglePlanetImageDisplay planet={planet}/>
-        </ColumnContainer>
-      </RowContainer>
+        </RowContainer>
+        <RowContainer>
+          <ColumnContainer className="single-planet-info-display-container">
+            {planet && planet.name ? displayedComponent : null}
+          </ColumnContainer>
+          <ColumnContainer>
+            <SinglePlanetImageDisplay planet={planet} />
+          </ColumnContainer>
+        </RowContainer>
       </ColumnContainer>
     </div>
   );

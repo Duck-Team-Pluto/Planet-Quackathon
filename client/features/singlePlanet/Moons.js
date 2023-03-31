@@ -41,60 +41,58 @@ const Moons = (props) => {
   const units = props.units;
   console.log(moons);
 
-  useEffect(()=>{
+  useEffect(() => {}, [dispatch]);
 
-  },[dispatch])
+  return (
+    <>
+      <Grid mb="30px">
+        <StyledAccordion>
+          <AccordionSummary sx={{ color: "#ccc" }}>
+            Click to see {planetName}'s Moons:
+          </AccordionSummary>
+          <AccordionDetails>
+            <StyledTable>
+              <TableHead>
+                <TableRow>
+                  <StyledCell align="left">Name</StyledCell>
+                  <StyledCell align="left">Origin of Name</StyledCell>
+                  {units === "kilometers" ? (
+                    <StyledCell align="left">Radius in Kilometers</StyledCell>
+                  ) : (
+                    <StyledCell align="left">Radius in Miles</StyledCell>
+                  )}
+                </TableRow>
+              </TableHead>
 
-  return (<>
+              <TableBody>
+                {moons.map((moon) => {
+                  let num = +moon.radiusInMiles;
+                  let radiusKm = (num * 1.609344).toLocaleString("en-US");
 
-    <Grid mb="30px">
-      <StyledAccordion>
-        <AccordionSummary sx={{ color: "#ccc" }}>
-          Click to see {planetName}'s Moons:
-        </AccordionSummary>
-        <AccordionDetails>
-          <StyledTable>
-            <TableHead>
-              <TableRow>
-                <StyledCell align="left">Name</StyledCell>
-                <StyledCell align="left">Origin of Name</StyledCell>
-                {units==="kilometers" ? (
-                  <StyledCell align="left">Radius in Kilometers</StyledCell>
-                ) : (
-                  <StyledCell align="left">Radius in Miles</StyledCell>
-                )}
-              </TableRow>
-            </TableHead>
-
-            <TableBody>
-              {moons.map((moon) => {
-                let num = +moon.radiusInMiles;
-                let radiusKm = (num * 1.609344).toFixed(3);
-
-                return (
-                  <TableRow key={moon.id}>
-                    <StyledCell>
-                      <Tooltip title="Learn more!">
-                        <StyledLink to={`/moons/${moon.id}`}>
-                          {moon.name}
-                        </StyledLink>
-                      </Tooltip>
-                    </StyledCell>
-                    <StyledCell>{moon.history}</StyledCell>
-                    {units==="kilometers" ? (
-                      <StyledCell>{radiusKm}</StyledCell>
-                    ) : (
-                      <StyledCell>{moon.radiusInMiles}</StyledCell>
-                    )}
-                  </TableRow>
-                );
-              })}
-            </TableBody>
-          </StyledTable>
-        </AccordionDetails>
-      </StyledAccordion>
-      <p>*Some moon radii may vary depending on moon shape*</p>
-    </Grid>
+                  return (
+                    <TableRow key={moon.id}>
+                      <StyledCell>
+                        <Tooltip title="Learn more!">
+                          <StyledLink to={`/moons/${moon.id}`}>
+                            {moon.name}
+                          </StyledLink>
+                        </Tooltip>
+                      </StyledCell>
+                      <StyledCell>{moon.history}</StyledCell>
+                      {units === "kilometers" ? (
+                        <StyledCell>{radiusKm}</StyledCell>
+                      ) : (
+                        <StyledCell>{moon.radiusInMiles}</StyledCell>
+                      )}
+                    </TableRow>
+                  );
+                })}
+              </TableBody>
+            </StyledTable>
+          </AccordionDetails>
+        </StyledAccordion>
+        <p>*Some moon radii may vary depending on moon shape*</p>
+      </Grid>
     </>
   );
 };
