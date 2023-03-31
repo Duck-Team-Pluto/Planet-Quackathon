@@ -10,6 +10,7 @@ const App = () => {
   return (
     <div id='main'>
       <AppRoutes />
+      <AppBackground />
       <Navbar />
 
       {/* StarBackground shows best in layers with slightly different values

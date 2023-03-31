@@ -11,16 +11,14 @@ const starMaker = (quantity, focus, starsize) => {
   return starArr.map((star)=>{
     const x = Math.random() * (150) - 75;
     const y = Math.random() * (100) - 50;
-    return `${x}rem ${y}rem ${focus}px ${starsize}px #fff`
+    return `${x}rem ${y}rem ${focus}vh ${starsize}vh #fff`
   })
 }
-
-const twinkles = starMaker(100, 1, .5)
 
 export const rotateAnimation = keyframes`
 0% { transform: rotate(0deg);}
 50% { transform: rotate(180deg);}
-100% { transform: rotate(359deg)}
+100% { transform: rotate(359deg);}
 `
 
 export const StarBackground = styled.div`
@@ -37,21 +35,5 @@ export const StarBackground = styled.div`
   animation-delay: 0s;
   animation-iteration-count: infinite;
   z-index: -4;
-`
-
-const twinkleAnimation = keyframes`
-  0% { transform: rotate(0deg); opacity: 0; }
-  50% { opacity: 1; }
-  100% { transform: rotate(359deg); opacity: 0; }
-`
-
-export const TwinkleStars = styled(StarBackground)`
-box-shadow: ${twinkles.join(',')};
-animation-name: ${twinkleAnimation};
-animation-duration: 480s;
-animation-timing-function: linear;
-animation-delay: 0s;
-animation-iteration-count: infinite;
-z-index: -4;
 `
 

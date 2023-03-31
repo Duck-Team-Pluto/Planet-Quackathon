@@ -16,12 +16,22 @@ const SolarSystemOrbit = () => {
 
   return (
     <div className="galaxy">
-      <TheSun>
-        <PlanetOrbit xPos={35} yPos={20} diameter={400}>
-          <SimplePlanetImage radius={3000}></SimplePlanetImage>
-        </PlanetOrbit>
-        <PlanetOrbit xPos={27} yPos={5} diameter={600}></PlanetOrbit>
-      </TheSun>
+    <TheSun>
+    {planets && planets.length ? planets.map((planet)=> {
+
+      return(
+        <PlanetOrbit
+          key={planet.id}
+          xPos={30}
+          yPos ={13}
+          d1={75}
+          d2={75}
+          rotation={40*planet.id}
+          timeOffset={planet.id*5.6}
+          >
+          <Link to={`/planets/${planet.id}`}><SimplePlanetImage margin={-37.5} radius={planet.radiusInMiles}>{planet.name}</SimplePlanetImage></Link></PlanetOrbit>
+          )}) : null}
+    </TheSun>
 
 
     </div>
