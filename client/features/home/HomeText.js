@@ -5,7 +5,7 @@ import { TypewriterText } from "../../styled-components/TypewriterText";
 const HomeText = () => {
   return (
     <div>
-      <ColumnContainer border={false} className="single-planet-info">
+      <ColumnContainer border={false} className="home-text" margin="0 2vw 0 0">
         <h1>Welcome Traveller!</h1>
         <h2>You've reached the intergalactic home of W.E.L.P.</h2>
         <TypewriterText>

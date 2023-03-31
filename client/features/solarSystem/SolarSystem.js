@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux"
-import { TheSun } from "../../styled-components/PlanetDisplays"
 import React, { useEffect } from "react"
 import { fetchAllPlanetsAsync } from "./solarSystemSlice"
 import PlanetList from "../solarSystem/PlanetList"
+import { RowContainer } from "../../styled-components/Containers"
 
 const SolarSystem = () => {
   const planets = useSelector((state)=>state.planets)
@@ -15,13 +15,9 @@ const SolarSystem = () => {
 
 
   return (
-   <div className="static-home">
-    <TheSun></TheSun>
-      <div className="planets-list">
+   <RowContainer className="static-home" width="95vw">
     {planets && planets.length ? <PlanetList planets={planets}/> : null}
-  </div>
-
-    </div>
+  </RowContainer>
   )
 }
 

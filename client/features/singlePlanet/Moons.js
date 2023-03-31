@@ -13,8 +13,7 @@ import {
   Grid,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+
 
 const StyledCell = styled(TableCell)`
   color: #ccc;
@@ -35,13 +34,13 @@ const StyledAccordion = styled(Accordion)`
 `;
 
 const Moons = (props) => {
-  const dispatch = useDispatch;
-  const moons = props.planet.moons;
-  const planetName = props.planet.planetName;
-  const units = props.units;
-  console.log(moons);
 
-  useEffect(() => {}, [dispatch]);
+  const moons = props.planet.moons;
+  const planetName = props.planet.name;
+  const units = props.units;
+  console.log(planetName);
+
+
 
   return (
     <>

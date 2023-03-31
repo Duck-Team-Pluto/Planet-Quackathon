@@ -15,7 +15,7 @@ const App = () => {
         <AppRoutes />
       </RowContainer>
 
-      <RowContainer>
+      <RowContainer margin="0 1vw 0 -1.5vw">
         <Navbar />
       </RowContainer>
       <AppBackground />

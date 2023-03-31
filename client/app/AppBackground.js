@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { StarBackground } from '../styled-components/StarBackground';
+import { StarBackground } from '../styled-components/StarBackground.js';
 
 const AppBackground = () => {
   return (
@@ -14,16 +14,12 @@ const AppBackground = () => {
       size: Number from 0.1 to 1.0 works best, pixel size of stars
       */}
 
-<StarBackground time='850s' density={300} blur={.25} size={.0675}></StarBackground>
+      <StarBackground time='850s' density={300} blur={.25} size={.0675}></StarBackground>
       <StarBackground time='550s' density={150} blur={.35} size={.1}></StarBackground>
       <StarBackground time='950s' density={250} blur={.35} size={.07125}></StarBackground>
       <StarBackground time='1250s' density={200} blur={.35} size={.0675}></StarBackground>
-      <StarBackground time='1550s' density={200} blur={.25} size={.0175}></StarBackground>
-      <StarBackground time='1050s' density={200} blur={.25} size={.0175}></StarBackground>
       <StarBackground time='850s' density={200} blur={.15} size={.0175}></StarBackground>
-      <StarBackground time='650s' density={200} blur={.25} size={.0175}></StarBackground>
       <StarBackground time='1250s' density={200} blur={.25} size={.0175}></StarBackground>
-      <StarBackground time='2250s' density={200} blur={.25} size={.0175}></StarBackground>
       <StarBackground time='1750s' density={200} blur={.25} size={.0175}></StarBackground>
 
     </div>

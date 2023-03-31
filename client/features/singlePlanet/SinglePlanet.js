@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { fetchPlanetAsync } from "./singlePlanetSlice";
 import Moons from "./Moons";
 import PlanetInfo from "./PlanetInfo";
+import FunFacts from "./FunFacts";
 import SinglePlanetImageDisplay from "./SinglePlanetImageDisplay";
 import {
   ColumnContainer,
@@ -18,7 +19,7 @@ const Planet = () => {
   console.log(planet)
 
   const SinglePlanetDisplays = {
-    funFacts: <PlanetInfo planet={planet} units={units} />,
+    funFacts: <FunFacts planet={planet} units={units} />,
     moonInfo: <Moons planet={planet} />,
   };
 
@@ -65,6 +66,7 @@ const Planet = () => {
 
   return (
     <div key={planet.id}>
+
       <RowContainer className="previous-and-next-buttons">
         <SpaceLink to={`/planets/${prev}`} text="Previous Planet!" />
         <ColumnContainer className="units-toggle" border={false}>
@@ -76,18 +78,19 @@ const Planet = () => {
         </ColumnContainer>
         <SpaceLink to={`/planets/${next}`} text="Next Planet!" />
       </RowContainer>
-      <RowContainer className="single-planet-info">
-        <h1>{planet.name}</h1>
-        <h2>
-          Radius {units === "miles" ? "(Miles)" : "(Km)"} {radius}
-        </h2>
-        <h2>
-          Distance from the Sun {units === "miles" ? "(Miles)" : "(Km)"}{" "}
-          {distance}
-        </h2>
-        <h2>Planet Type: {planet.planetType}</h2>
-      </RowContainer>
-      <ColumnContainer className="single-planet-main-container">
+
+      <RowContainer className="single-planet-main-container">
+        <PlanetInfo
+          planet={planet}
+          units={units}
+          radius={radius}
+          distance={distance}
+          className="single-planet-info"
+        />
+
+      <SinglePlanetImageDisplay planet={planet} />
+
+      <ColumnContainer className="single-planet-info-display-container" margin="5vh 2vw 0 0">
         <RowContainer className="display-options">
           <input
             type="radio"
@@ -106,15 +109,12 @@ const Planet = () => {
           />
           <label htmlFor="moon-info">Moon Info</label>
         </RowContainer>
-        <RowContainer>
-          <ColumnContainer className="single-planet-info-display-container">
             {planet && planet.name ? displayedComponent : null}
-          </ColumnContainer>
-          <ColumnContainer>
-            <SinglePlanetImageDisplay planet={planet} />
-          </ColumnContainer>
-        </RowContainer>
       </ColumnContainer>
+
+
+
+    </RowContainer>
     </div>
   );
 };
