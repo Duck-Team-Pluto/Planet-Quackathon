@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from "react-redux"
-import { TheSun } from "../../styled-components/PlanetDisplays"
 import React, { useEffect } from "react"
 import { fetchAllPlanetsAsync } from "./solarSystemSlice"
 import PlanetList from "../solarSystem/PlanetList"
@@ -16,7 +15,7 @@ const SolarSystem = () => {
 
   return (
    <div className="static-home">
-    <TheSun></TheSun>
+
       <div className="planets-list">
     {planets && planets.length ? <PlanetList planets={planets}/> : null}
   </div>

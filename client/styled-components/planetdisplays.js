@@ -94,14 +94,11 @@ export const Rings = styled.div`
 `;
 
 export const TheSun = styled.div`
-  position: fixed;
+  position: relative;
   display: block;
-  top: 50%;
-  left: 50%;
   width: 15rem;
   height: 15rem;
-  margin-top: -7.5rem;
-  margin-left: -7.5rem;
+  margin: 0;
   border-radius: 50%;
   background-repeat: no-repeat;
   background: radial-gradient(
