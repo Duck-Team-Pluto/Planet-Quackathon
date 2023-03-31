@@ -3,9 +3,7 @@ import styled from "styled-components";
 export const NavDot = styled.div`
   height: 15px;
   width: 15px;
-  background-color: ${(props) => {
-    props.color;
-  }};
+  background-color: ${(props) => `${props.color}`};
   color: ${(props) => {
     props.color;
   }};
