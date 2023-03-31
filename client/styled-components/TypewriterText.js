@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { keyframes } from "styled-components";
 
+/*
 // const typing = keyframes`
 // @keyframes typing {
 //   from { width: 0 }
@@ -11,7 +12,7 @@ import { keyframes } from "styled-components";
 // const blinking = keyframes`blink-caret {
 //   from, to { border-color: transparent }
 //   50% { border-color: orange }
-// }`;
+// }`;*/
 
 export const TypewriterText = styled.div`
 overflow: hidden; /* Ensures the content is not revealed until the animation */
@@ -21,7 +22,7 @@ letter-spacing: .15em; /* Adjust as needed */
 animation:
     typing 5s steps(30, end),
     blink-caret .5s step-end infinite;
-}
+
 
 /* The typing effect */
 @keyframes typing {
@@ -34,5 +35,5 @@ animation:
   from, to { border-color: transparent }
   50% { border-color: white }
 }
-}
+
 `;
