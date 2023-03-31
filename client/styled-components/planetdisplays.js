@@ -16,6 +16,15 @@ Uranus:rgba(15, 82, 186, 1), rgba(17, 100, 180, 1)
 Neptune:rgba(0, 20, 168, 1), rgba(0, 35, 135, 1)
 Pluto:rgba(219, 215, 210, 1), rgba(152, 129, 123, 1)
 */
+const mercury = [229, 228, 226, 1];
+let color = "#ccc";
+color = +color;
+
+const nums = [124, 9, 2, 1];
+const nums2 = [137, 63, 69, 1];
+let one = nums[0];
+console.log("maybe?");
+
 export const SinglePlanetImage = styled.div`
   position: absolute;
   border-radius: 50%;
@@ -23,8 +32,8 @@ export const SinglePlanetImage = styled.div`
   width: ${(props) => `${props.radius ** 0.25 * 4}vh`};
   background: radial-gradient(
     circle at -100%,
-    rgba(100, 60, 200, 1),
-    rgba(180, 120, 255, 1)
+    rgba(${(props) => `${props.colorOne}, 1 `}),
+    rgba(${(props) => `${props.colorTwo}, 1 `})
   );
   background-size: cover;
   box-shadow: ${(props) => `
@@ -56,8 +65,8 @@ export const SimplePlanetImage = styled.div`
     border-radius: 50%;
     background: radial-gradient(
       circle at -100%,
-      rgba(100, 60, 200, 1),
-      rgba(180, 120, 255, 1)
+      rgba(${(props) => `${props.colorOne}, 1 `}),
+      rgba(${(props) => `${props.colorTwo}, 1 `})
     );
     background-size: cover;
 

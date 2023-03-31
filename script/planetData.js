@@ -1,3 +1,15 @@
+/*
+Mercury: rgba(229, 228, 226, 1), rgba(192, 192, 192, 1)
+Venus: rgba(242, 133, 0, 1), rgba(181, 105, 23, 1)
+Earth:rgba(0, 112, 187, 1), rgba(30, 77, 43, 1) <== this is terrible, somebody needs to fix it
+Mars:rgba(137, 63, 69, 1), rgba(128, 24, 24, 1)
+Jupiter:rgba(193, 154, 107, 1), rgba(191, 87, 0, 1)
+Saturn:rgba(195, 176, 145, 1), rgba(218, 200, 174, 1)
+Uranus:rgba(15, 82, 186, 1), rgba(17, 100, 180, 1)
+Neptune:rgba(0, 20, 168, 1), rgba(0, 35, 135, 1)
+Pluto:rgba(219, 215, 210, 1), rgba(152, 129, 123, 1)
+*/
+
 const planets = [
   {
     name: "Mercury",
@@ -12,6 +24,8 @@ const planets = [
       "Due to solar radiation and extreme temperatures, it is very unlikely that life could survive on the planet.",
     planetType: "Solid",
     id: 1,
+    colorOne: [229, 228, 261],
+    colorTwo: [192, 192, 192],
   },
   {
     name: "Venus",
@@ -28,6 +42,8 @@ const planets = [
       "Its thick atmosphere is full of the greenhouse gas carbon dioxide, and it has clouds of sulfuric acid.",
     planetType: "Solid",
     id: 2,
+    colorOne: [242, 133, 0],
+    colorTwo: [181, 105, 23],
   },
   {
     name: "Earth",
@@ -42,6 +58,8 @@ const planets = [
       "The planet's surface is bumpy, and water flow, ice drift and the movement of the tectonic plates beneath Earth's crust all change the pull of gravity over the surface.",
     planetType: "Solid",
     id: 3,
+    colorOne: [0, 112, 187],
+    colorTwo: [30, 77, 43],
   },
   {
     name: "Mars",
@@ -56,6 +74,8 @@ const planets = [
       "Mars is home to Olympus Mons, a dormant volcano and the largest volcano and highest mountain in our solar system. It is 16 miles high and 600 km across the base, making it 3x the height of Mount Everest.",
     planetType: "Solid",
     id: 4,
+    colorOne: [137, 63, 69],
+    colorTwo: [128, 24, 24],
   },
   {
     name: "Jupiter",
@@ -71,6 +91,8 @@ const planets = [
       "It has big storms like the Great Red Spot, which has been going for hundreds of years.",
     planetType: "Gas Giant",
     id: 5,
+    colorOne: [193, 154, 107],
+    colorTwo: [191, 87, 0],
   },
   {
     name: "Saturn",
@@ -85,6 +107,8 @@ const planets = [
     factThree: "This planet is named after the Roman god of farming.",
     planetType: "Gas Giant",
     id: 6,
+    colorOne: [195, 176, 145],
+    colorTwo: [218, 200, 174],
   },
   {
     name: "Uranus",
@@ -99,6 +123,8 @@ const planets = [
     factThree: "Uranus is the only planet that spins on its side.",
     planetType: "Ice Giant",
     id: 7,
+    colorOne: [15, 82, 186],
+    colorTwo: [17, 100, 180],
   },
   {
     name: "Neptune",
@@ -115,6 +141,8 @@ const planets = [
       "Neptune is an ice giant. Its made up of dense icy materials, mainly water, methane and ammonia, above a small rocky planetType.",
     planetType: "Ice Giant",
     id: 8,
+    colorOne: [0, 20, 168],
+    colorTwo: [0, 35, 135],
   },
   {
     name: "Pluto",
@@ -130,6 +158,8 @@ const planets = [
       "Pluto is the only place other than Earth in our solar system that has white-peaked mountains, but these white caps arent made of snow. Instead, theyre made of methane frost.",
     planetType: "Dwarf",
     id: 9,
+    colorOne: [219, 215, 210],
+    colorTwo: [152, 129, 123],
   },
 ];
 

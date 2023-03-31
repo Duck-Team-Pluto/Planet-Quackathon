@@ -50,6 +50,12 @@ const Planet = db.define("planet", {
     type: Sequelize.ENUM,
     values: ["Solid", "Gas Giant", "Ice Giant", "Dwarf"],
   },
+  colorOne: {
+    type: Sequelize.ARRAY(Sequelize.INTEGER),
+  },
+  colorTwo: {
+    type: Sequelize.ARRAY(Sequelize.INTEGER),
+  },
 });
 
 module.exports = Planet;
