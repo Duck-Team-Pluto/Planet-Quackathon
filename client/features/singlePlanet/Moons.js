@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   Table,
@@ -14,6 +13,8 @@ import {
   Grid,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
 const StyledCell = styled(TableCell)`
   color: #ccc;
@@ -34,12 +35,18 @@ const StyledAccordion = styled(Accordion)`
 `;
 
 const Moons = (props) => {
-  const moons = props.moons;
-  const planetName = props.planetName;
+  const dispatch = useDispatch;
+  const moons = props.planet.moons;
+  const planetName = props.planet.planetName;
   const units = props.units;
   console.log(moons);
 
-  return (
+  useEffect(()=>{
+
+  },[dispatch])
+
+  return (<>
+
     <Grid mb="30px">
       <StyledAccordion>
         <AccordionSummary sx={{ color: "#ccc" }}>
@@ -88,6 +95,7 @@ const Moons = (props) => {
       </StyledAccordion>
       <p>*Some moon radii may vary depending on moon shape*</p>
     </Grid>
+    </>
   );
 };
 
