@@ -1,14 +1,22 @@
 import React from "react";
-import { RowContainer } from "../../styled-components/Containers";
-import SpaceLink from "../../styled-components/SpaceLink";
+import { useSelector, useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { NavButton } from "./NavButton";
 
 const Navbar = () => {
   return (
     <div>
       <nav>
-
-          <SpaceLink to={`/home/`} text='Home' />
-
+        <div>
+          <h2>
+            <span className='navHeading'>MISSION CONTROL</span>
+          </h2>
+        </div>
+        <div className='navlinks'>
+          <Link to='/home'>Home</Link>
+          <NavButton color='#EE2E31' displayText='TEST' destination='/home' />
+          <Link to='/about'>About</Link>
+        </div>
       </nav>
     </div>
   );

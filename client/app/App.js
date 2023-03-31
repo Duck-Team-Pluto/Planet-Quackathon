@@ -1,16 +1,18 @@
-
-import React from 'react';
-import Navbar from '../features/navbar/Navbar';
-import AppRoutes from './AppRoutes';
-import AppBackground from './AppBackground';
-
+import React from "react";
+import {
+  StarBackground,
+  TwinkleStars,
+} from "../styled-components/starbackground";
+import Navbar from "../features/navbar/Navbar";
+import AppRoutes from "./AppRoutes";
+import AppBackground from "./AppBackground";
 
 const App = () => {
   return (
-    <div id="main">
-      <Navbar />
+    <div id='main'>
       <AppRoutes />
-      <AppBackground/ >
+      <Navbar />
+      <AppBackground />
     </div>
   );
 };
