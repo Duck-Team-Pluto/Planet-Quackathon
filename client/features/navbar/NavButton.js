@@ -5,7 +5,7 @@ import { NavDot } from "../../styled-components/NavDot";
 
 export const NavButton = (props) => {
   const { color, displayText, destination } = props;
-  console.log("hi from navbutton component", color, displayText);
+
   return (
     <div className='navButton'>
       <a href={destination}>
