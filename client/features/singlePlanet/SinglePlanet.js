@@ -15,29 +15,30 @@ const Planet = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const planet = useSelector((state) => state.planet);
-  console.log(planet)
+  const [units, setUnits] = useState("miles");
 
   const SinglePlanetDisplays = {
     funFacts: <PlanetInfo planet={planet} units={units} />,
-    moonInfo: <Moons planet={planet} />,
+    moonInfo: (
+      <Moons
+        planet={planet}
+        units={units}
+        displayedComponent={displayedComponent}
+      />
+    ),
   };
+  const [displayedComponent, setDisplayedComponent] = useState(
+    SinglePlanetDisplays.funFacts
+  );
 
   let next = +id + 1;
   let prev = +id - 1;
   if (next > 9) next = 1;
   if (prev < 1) prev = 9;
 
-
-
-  const [units, setUnits] = useState("miles");
-  const [displayedComponent, setDisplayedComponent] = useState(
-    SinglePlanetDisplays.funFacts
-  );
   const [radius, setRadius] = useState(planet.radiusInMiles);
   const [distance, setDistance] = useState(planet.distanceInMiles);
   const toKilometers = 1.609344;
-
-
 
   const handleUnitChange = (e) => {
     setUnits(e.target.checked ? "kilometers" : "miles");
@@ -59,7 +60,7 @@ const Planet = () => {
       units === "miles"
         ? (+planet.distanceInMiles).toLocaleString("en-US")
         : (+planet.distanceInMiles * toKilometers).toLocaleString("en-US")
-    )
+    );
     setDisplayedComponent(SinglePlanetDisplays.funFacts);
   }, [dispatch, id, units, planet.name]);
 
