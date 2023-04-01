@@ -7,10 +7,8 @@ export const NavButton = (props) => {
   const { color, displayText, destination } = props;
 
   return (
-    <div className='navButton'>
-      <a href={destination}>
-        <NavDot color={color} /> {displayText}
-      </a>
-    </div>
+    <a className='navButton' href={destination}>
+      <NavDot color={color} /> {displayText}
+    </a>
   );
 };

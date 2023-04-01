@@ -16,9 +16,8 @@ const Navbar = () => {
         </ColumnContainer>
 
         <div className='navlinks'>
-          {/* <Link to="/home">Home</Link> */}
-          <NavButton color='#EE2E31' destination='/home' displayText='home' />
-          <Link to='/about'>About</Link>
+          <NavButton color='#5036FF' destination='/home' displayText='home' />
+          <NavButton color='#36D936' destination='/about' displayText='about' />
         </div>
       </nav>
     </div>

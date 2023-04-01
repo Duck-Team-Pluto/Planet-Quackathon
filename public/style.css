@@ -52,7 +52,9 @@ nav {
 .navButton {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-start;
+  align-items: center;
+  width: auto;
 }
 
 .navHeading {
@@ -65,7 +67,7 @@ nav {
   padding-right: 25px;
 }
 
-nav > a {
+nav a {
   top: 2%;
   left: 2%;
   text-decoration: none;
@@ -86,7 +88,7 @@ nav a:hover {
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
-  font-size:larger;
+  font-size: larger;
 }
 
 .navlinks * {
