@@ -86,6 +86,7 @@ nav a:hover {
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
+  font-size:larger;
 }
 
 .navlinks * {

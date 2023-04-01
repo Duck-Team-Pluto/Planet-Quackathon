@@ -28,8 +28,9 @@ let one = nums[0];
 export const SinglePlanetImage = styled.div`
   position: absolute;
   border-radius: 50%;
-  height: ${(props) => `${props.radius ** 0.20 * 5}vh`};
-  width: ${(props) => `${props.radius ** 0.20 * 5}vh`};
+  margin-top: 175px;
+  height: ${(props) => `${props.radius ** 0.2 * 5}vh`};
+  width: ${(props) => `${props.radius ** 0.2 * 5}vh`};
   background: radial-gradient(
     circle at -100%,
     rgba(${(props) => `${props.colorOne}, 1 `}),
@@ -60,6 +61,7 @@ export const SimplePlanetImage = styled.div`
   & {
     position: relative;
     margin-bottom: 1vh;
+    margin-top: 20px;
     height: ${(props) => `${props.radius ** 0.25 / 2}vh`};
     width: ${(props) => `${props.radius ** 0.25 / 2}vh`};
     border-radius: 50%;
@@ -109,7 +111,7 @@ export const TheSun = styled.div`
   display: block;
   width: 15rem;
   height: 15rem;
-  margin: 0;
+  margin: 50px 0 0 40px;
   border-radius: 50%;
   background-repeat: no-repeat;
   background: radial-gradient(
