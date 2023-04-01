@@ -14,6 +14,8 @@ const About = () => {
           text='Github Repository'
         />
       </p>
+      <h2>The Team</h2>
+
       <div className='team'>
         {aboutTeam.map((person) => (
           <TeamMember key={person.name} person={person} />
