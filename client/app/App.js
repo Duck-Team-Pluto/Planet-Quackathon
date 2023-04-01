@@ -2,7 +2,7 @@ import React from "react";
 import {
   StarBackground,
   TwinkleStars,
-} from "../styled-components/starbackground";
+} from "../styled-components/StarBackground";
 import Navbar from "../features/navbar/Navbar";
 import AppRoutes from "./AppRoutes";
 import AppBackground from "./AppBackground";
