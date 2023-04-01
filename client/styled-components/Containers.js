@@ -16,6 +16,7 @@ export const RowContainer = styled.div`
 `;
 export const ColumnContainer = styled.div`
   display: flex;
+  text-align: ${(props) => (props.textAlign ? props.textAlign : "left")};
   align-items: ${(props) => (props.align ? props.align : "center")};
   justify-content: space-between;
   position: relative;
