@@ -17,7 +17,7 @@ export const aboutTeam = [
   },
   {
     name: "Mae May",
-    bio: "Mae loves to build things! Prior to becoming a software developer, she ran a woodworking business and worked in Operations in multiple industries. She is and will always be an artist at heart with extensive experience in music and dance performance and composition, as well as textile design and fabrication. For this app, Mae was the mastermind behind all of our styled components, including calculations to dynamically generate animations and size based on database info.",
+    bio: "Mae loves to build things! Prior to becoming a software developer, she ran a woodworking business and worked in Operations in multiple industries. She is and will always be an artist at heart with extensive experience in music and dance performance and composition, as well as textile design and fabrication. For this app, Mae was the mastermind behind all of our styled components, including calculations to dynamically generate animations and size based on database info. If you would like to play with the animated star background she designed, you can see the code here: https://codepen.io/maemay/pen/XWPQprL",
     imageLink: "images/mae-astro.png",
     gitLink: "https://github.com/maemay85",
     linkedIn: "https://www.linkedin.com/in/mae-may/",
