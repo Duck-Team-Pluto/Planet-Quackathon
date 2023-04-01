@@ -34,7 +34,7 @@ Additionally, I have worked in Operations in multiple industries (tech startups,
 And of course, at heart, I am still and always will be an artist - and have extensive experience in music and dance performance and composition, and textile design and fabrication. Again, I love to build things :)
   {
     name: "Lindsay Powell",
-    bio: "Lindsay is a former environmental scientist, currently diving into the world of software engineering! Lindsay helped with gathering backend data. She also handed several of the frontend components.",
+    bio: "Lindsay is a former environmental scientist, currently diving into the world of software engineering! Lindsay helped with gathering backend data and created several of the frontend components.",
     imageLink: "images/lindsay-astro.png",
     gitLink: "https://github.com/lindsayerin3393",
     linkedIn: "https://www.linkedin.com/in/lindsay-powell3/",
