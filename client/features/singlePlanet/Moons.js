@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
 import {
   Table,
   TableHead,
@@ -38,53 +37,57 @@ const Moons = (props) => {
   const moons = props.planet.moons;
   const planetName = props.planet.name;
   const units = props.units;
+  console.log(planetName);
 
-  const dispatch = useDispatch;
-  useEffect(() => {}, [units]);
-  console.log(units);
   return (
     <ColumnContainer width="30vw">
       <Grid mb="30px">
-        <StyledTable>
-          <TableHead>
-            <TableRow>
-              <StyledCell align="left">Name</StyledCell>
-              <StyledCell align="left">Origin of Name</StyledCell>
-              {units === "kilometers" ? (
-                <StyledCell align="left">Radius in Kilometers</StyledCell>
-              ) : (
-                <StyledCell align="left">Radius in Miles</StyledCell>
-              )}
-            </TableRow>
-          </TableHead>
-
-          <TableBody>
-            {moons.map((moon) => {
-              let num = +moon.radiusInMiles;
-              let radiusKm = (num * 1.609344).toLocaleString("en-US");
-
-              return (
-                <TableRow key={moon.id}>
-                  <StyledCell>
-                    <Tooltip title="Learn more!">
-                      <StyledLink to={`/moons/${moon.id}`}>
-                        {moon.name}
-                      </StyledLink>
-                    </Tooltip>
-                  </StyledCell>
-                  <StyledCell>{moon.history}</StyledCell>
+        {moons && moons.length ? (
+          <>
+            {" "}
+            <StyledTable>
+              <TableHead>
+                <TableRow>
+                  <StyledCell align="left">Name</StyledCell>
+                  <StyledCell align="left">Origin of Name</StyledCell>
                   {units === "kilometers" ? (
-                    <StyledCell>{radiusKm}</StyledCell>
+                    <StyledCell align="left">Radius in Kilometers</StyledCell>
                   ) : (
-                    <StyledCell>{moon.radiusInMiles}</StyledCell>
+                    <StyledCell align="left">Radius in Miles</StyledCell>
                   )}
                 </TableRow>
-              );
-            })}
-          </TableBody>
-        </StyledTable>
+              </TableHead>
 
-        <p>*Some moon radii may vary depending on moon shape*</p>
+              <TableBody>
+                {moons.map((moon) => {
+                  let num = +moon.radiusInMiles;
+                  let radiusKm = (num * 1.609344).toLocaleString("en-US");
+
+                  return (
+                    <TableRow key={moon.id}>
+                      <StyledCell>
+                        <Tooltip title="Learn more!">
+                          <StyledLink to={`/moons/${moon.id}`}>
+                            {moon.name}
+                          </StyledLink>
+                        </Tooltip>
+                      </StyledCell>
+                      <StyledCell>{moon.history}</StyledCell>
+                      {units === "kilometers" ? (
+                        <StyledCell>{radiusKm}</StyledCell>
+                      ) : (
+                        <StyledCell>{moon.radiusInMiles}</StyledCell>
+                      )}
+                    </TableRow>
+                  );
+                })}
+              </TableBody>
+            </StyledTable>
+            <p>*Some moon radii may vary depending on moon shape*</p>
+          </>
+        ) : (
+          <h2>This planet has no moons!</h2>
+        )}
       </Grid>
     </ColumnContainer>
   );
