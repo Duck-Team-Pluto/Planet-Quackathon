@@ -10,7 +10,7 @@ export const aboutTeam = [
   },
   {
     name: "Madeleine Lloyd-Davies",
-    bio: "Here is a little bio of Madeleine, or maybe a few notes about her specific contributions",
+    bio: "Comics industry professional-turned-academic administrator-turned software engineer! Always excited to find opportunities to learn new things, collaborate with weirdos, do a debugging deep dive, and find ways to make someone else's life easier.",
     imageLink: "images/madeleine-astro.png",
     gitLink: "https://github.com/madeleine-lloyd-davies",
     linkedIn: "https://www.linkedin.com/in/madeleine-lloyd-davies/",
@@ -24,7 +24,7 @@ export const aboutTeam = [
   },
   {
     name: "Lindsay Powell",
-    bio: "Here is a little bio of Lindsay, or maybe a few notes about her specific contributions",
+    bio: "Lindsay is a former environmental scientist, currently diving into the world of software engineering! Lindsay helped with gathering backend data. She also handed several of the frontend components.",
     imageLink: "images/lindsay-astro.png",
     gitLink: "https://github.com/lindsayerin3393",
     linkedIn: "https://www.linkedin.com/in/lindsay-powell3/",
