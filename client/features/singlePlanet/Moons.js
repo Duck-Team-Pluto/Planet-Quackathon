@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import {
   Table,
   TableHead,
@@ -37,8 +38,10 @@ const Moons = (props) => {
   const moons = props.planet.moons;
   const planetName = props.planet.name;
   const units = props.units;
-  console.log(planetName);
 
+  const dispatch = useDispatch;
+  useEffect(() => {}, [units]);
+  console.log(units);
   return (
     <ColumnContainer width="30vw">
       <Grid mb="30px">
