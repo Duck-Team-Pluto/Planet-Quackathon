@@ -11,14 +11,14 @@ const Navbar = () => {
   return (
     <div>
       <nav>
-        <ColumnContainer height="12vh" padding="2vh 0 0 0">
-          <span className="navHeading">MISSION CONTROL</span>
+        <ColumnContainer height='12vh' padding='2vh 0 0 0'>
+          <span className='navHeading'>MISSION CONTROL</span>
         </ColumnContainer>
 
-        <div className="navlinks">
-          <Link to="/home">Home</Link>
-          <NavButton color="#EE2E31" destination="/home" />
-          <Link to="/about">About</Link>
+        <div className='navlinks'>
+          {/* <Link to="/home">Home</Link> */}
+          <NavButton color='#EE2E31' destination='/home' displayText='home' />
+          <Link to='/about'>About</Link>
         </div>
       </nav>
     </div>
