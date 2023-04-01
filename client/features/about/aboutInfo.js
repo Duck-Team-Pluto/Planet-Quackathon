@@ -23,15 +23,6 @@ export const aboutTeam = [
     linkedIn: "https://www.linkedin.com/in/mae-may/",
   },
 
-  Hi I'm Mae, and I love to build things!
-
-I am currently focusing on software development, having graduated in Feb 2023 from the Grace Hopper at Fullstack Academy. It is quite thrilling to plan out an application from the backend to the front, write code, debug, debug, refactor, debug, debug again, and refactor once more, and then just like *magic* to deploy and have something out in the world that can actually help people.
-
-Prior to coding, I ran a woodworking business and learned all kinds of things about working with clients, sketching out their ideas, creating a roadmap, and communicating the timeline with them, and working with a variety of components to bring the project into physical reality. It was actually this that prepared me for fullstack development - only now I'm working with code instead of, you know, wood.
-
-Additionally, I have worked in Operations in multiple industries (tech startups, a nonprofit music venue, a yarn shop) with an expansive skillset to match. I love encountering new ideas and tackling new problems. If you've worked in Operations before, you'll know that it is essentially a job of debugging in the real world!
-
-And of course, at heart, I am still and always will be an artist - and have extensive experience in music and dance performance and composition, and textile design and fabrication. Again, I love to build things :)
   {
     name: "Lindsay Powell",
     bio: "Lindsay is a former environmental scientist, currently diving into the world of software engineering! Lindsay helped with gathering backend data and created several of the frontend components.",
