@@ -1,6 +1,7 @@
 import React from "react";
 import { aboutProject, aboutTeam } from "./aboutInfo";
 import TeamMember from "./TeamMember";
+import SpaceLink from "../../styled-components/SpaceLink";
 
 const About = () => {
   return (
@@ -8,13 +9,12 @@ const About = () => {
       <h1>About</h1>
       <p>{aboutProject}</p>
       <p>
-        <a
-          className="about-a"
-          href="https://github.com/Duck-Team-Pluto/Planet-Quackathon">
-          Github Repository
-        </a>
+        <SpaceLink
+          to='https://github.com/Duck-Team-Pluto/Planet-Quackathon'
+          text='Github Repository'
+        />
       </p>
-      <div className="team">
+      <div className='team'>
         {aboutTeam.map((person) => (
           <TeamMember key={person.name} person={person} />
         ))}
