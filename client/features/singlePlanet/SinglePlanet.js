@@ -113,8 +113,10 @@ const Planet = () => {
             />
             <label htmlFor="moon-info">Moon Info</label>
           </RowContainer>
-          {planet && planet.name ? ( displayedComponent === "funFacts" ? <FunFacts planet={planet} units={units} />
-    : <Moons planet={planet} units={units} /> ) : null}
+          <ColumnContainer className="fun-and-moons" width="30vw" margin="0 0 20vh 0">
+             {planet && planet.name ? ( displayedComponent === "funFacts" ? <FunFacts planet={planet} units={units} />
+              : <Moons planet={planet} units={units} /> ) : null}
+          </ColumnContainer>
         </ColumnContainer>
       </RowContainer>
     </div>
