@@ -6,6 +6,8 @@ import { ColumnContainer } from "../../styled-components/Containers";
 const PlanetInfo = (props) => {
  const { radius, distance, units, planet } = props;
 
+ console.log('from planet info: ', units)
+
   return (
 
       <ColumnContainer width='30vw' margin="0 0 0 2vw" align='left'>

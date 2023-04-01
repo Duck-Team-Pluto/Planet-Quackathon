@@ -18,10 +18,7 @@ const Planet = () => {
   const planet = useSelector((state) => state.planet);
   const [units, setUnits] = useState("miles");
 
-  const SinglePlanetDisplays = {
-    funFacts: <FunFacts planet={planet} units={units} />,
-    moonInfo: <Moons planet={planet} units={units} />,
-  };
+
 
   let next = +id + 1;
   let prev = +id - 1;
@@ -29,7 +26,7 @@ const Planet = () => {
   if (prev < 1) prev = 9;
 
   const [displayedComponent, setDisplayedComponent] = useState(
-    SinglePlanetDisplays.funFacts
+    'funFacts'
   );
   const [radius, setRadius] = useState(planet.radiusInMiles);
   const [distance, setDistance] = useState(planet.distanceInMiles);
@@ -40,11 +37,7 @@ const Planet = () => {
   };
 
   const handleDisplayedComponentChange = (e) => {
-    setDisplayedComponent(SinglePlanetDisplays[e.target.value]);
-  };
-
-  const handleClick = (e) => {
-    setUnits("miles");
+    setDisplayedComponent(e.target.value);
   };
 
   useEffect(() => {
@@ -62,7 +55,7 @@ const Planet = () => {
   }, [dispatch, id, units, planet.name]);
 
   useEffect(() => {
-    setDisplayedComponent(SinglePlanetDisplays.funFacts);
+    setDisplayedComponent('funFacts');
   }, [planet.name]);
 
   return (
@@ -120,7 +113,8 @@ const Planet = () => {
             />
             <label htmlFor="moon-info">Moon Info</label>
           </RowContainer>
-          {planet && planet.name ? displayedComponent : null}
+          {planet && planet.name ? ( displayedComponent === "funFacts" ? <FunFacts planet={planet} units={units} />
+    : <Moons planet={planet} units={units} /> ) : null}
         </ColumnContainer>
       </RowContainer>
     </div>

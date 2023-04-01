@@ -8,8 +8,6 @@ import {
   TableBody,
   Tooltip,
   Accordion,
-  AccordionSummary,
-  AccordionDetails,
   Grid,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
@@ -28,16 +26,11 @@ const StyledLink = styled(Link)`
   font-weight: bold;
 `;
 
-const StyledAccordion = styled(Accordion)`
-  background: transparent;
-  margin-bottom: 40px;
-`;
-
 const Moons = (props) => {
   const moons = props.planet.moons;
-  const planetName = props.planet.name;
   const units = props.units;
-  console.log(planetName);
+
+  console.log(units);
 
   return (
     <ColumnContainer width="30vw">
