@@ -7,18 +7,15 @@ import {
   TableCell,
   TableBody,
   Tooltip,
-  Accordion,
-  Grid,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { ColumnContainer } from "../../styled-components/Containers";
 
 const StyledCell = styled(TableCell)`
   color: #ccc;
 `;
 
 const StyledTable = styled(Table)`
-  width: 60%;
+  width: 100%;
   margin: auto;
 `;
 const StyledLink = styled(Link)`
@@ -33,8 +30,7 @@ const Moons = (props) => {
   console.log(units);
 
   return (
-    <ColumnContainer width="30vw">
-      <Grid mb="30px">
+    <div>
         {moons && moons.length ? (
           <>
             {" "}
@@ -81,8 +77,7 @@ const Moons = (props) => {
         ) : (
           <h2>This planet has no moons!</h2>
         )}
-      </Grid>
-    </ColumnContainer>
+    </div>
   );
 };
 

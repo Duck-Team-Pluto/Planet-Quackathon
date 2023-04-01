@@ -6,7 +6,7 @@ const FunFacts = (props) => {
   const units = props.units;
 
   return (
-    <ColumnContainer width="30vw">
+    <>
       <h2>Fun Facts!!!</h2>
       <div className="fun-facts">
 
@@ -15,7 +15,7 @@ const FunFacts = (props) => {
         <h3>{planet.factThree}</h3>
 
       </div>
-    </ColumnContainer>
+    </>
   );
 };
 export default FunFacts;
